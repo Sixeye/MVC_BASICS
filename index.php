@@ -9,15 +9,15 @@ if (isset($_GET['page']) AND !empty($_GET['page'])){
 // Array with all pages
 $allPages = scandir('controllers/');
 
-if (in_array($page.'_controller.php', $allPages)){
+if (in_array($page.'_controller.php', $allPages)) {
 
     // Include the page
     include_once 'models/'.$page.'_model.php';
     include_once 'controllers/'.$page.'_controller.php';
     include_once 'views/'.$page.'_view.php';
-
-}; else {
-    echo 'Erreur 404';
-}
+    } else 
+    {
+    echo "Erreur 404";
+    }
 
 ?>
