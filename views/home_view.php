@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php ucfirst($page) ?> - Blog de l'écrivain</title>
+
+    <?php include_once 'views/includes/head.php'?>    
+
 </head>
+
 <body>
 
     <?php include_once 'views/includes/header.php'?>
     
-    <h1>Hello World!</h1>
+    <h1>BILLET POUR L'ALASKA</h1>
+    <br>
+    <h2>blog du roman de Jean Forteroche</h2>
 
+    <img src="assets/images/iceAlone.jpeg" alt="Woman in front of an ice sea">
 
     <?php include_once 'views/includes/footer.php'?>
+
+    <script src="assets/js/app.js"></script>
+
 </body>
 </html>

@@ -1,4 +1,8 @@
 <?php
+
+include_once '_config/config.php';
+include_once '_config/db.php';
+
 // Current page definition
 if (isset($_GET['page']) AND !empty($_GET['page'])){
     $page = trim(strtolower($_GET['page']));
