@@ -7,12 +7,10 @@
     <title><?php ucfirst($page) ?> - Blog de l'écrivain</title>
 </head>
 <body>
+    <?php include_once 'views/includes/header.php '?>
 
-    <?php include_once 'views/includes/header.php'?>
-    
-    <h1>Hello World!</h1>
+   <h1>Contact</h1>
 
-
-    <?php include_once 'views/includes/footer.php'?>
+    <?php include_once 'views/includes/footer.php '?>
 </body>
 </html>
