@@ -46,21 +46,20 @@ class Articles{
 * @return array
 */
 
-    static function getAllArticles(){
-         global $db;
+  static function getAllArticles() {
 
-        $id = str_secur($id);
+        global $db;
 
-        $reqArticle = $db->prepare('
+        $reqArticles = $db->prepare('
             SELECT a.*, au.firstname, au.lastname, c.name AS category
-            FROM articles a
+            FROM articles a 
             INNER JOIN authors au ON au.id = a.author_id
             INNER JOIN categories c ON c.id = a.category_id
-            ');
+        ');
         $reqArticles->execute([]);
-        $data = $reqArticles->fetchAll();
-    }
+        return $reqArticles->fetchAll();
 
+    }
 }
 
 ?>

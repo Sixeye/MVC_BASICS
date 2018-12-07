@@ -10,6 +10,7 @@
 
    <h1>Contact</h1>
 
-    <?php include_once 'views/includes/footer.php'?>
+<?php include_once 'views/includes/footer.php'?>
+<?php include_once 'views/includes/scriptsLink.php'?>
 </body>
 </html>
