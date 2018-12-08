@@ -1,0 +1,15 @@
+#titreBlog {
+  font-size: 2em;
+}
+
+.caption {
+  font-size: 20px;
+  font-weight: 100;
+  font-style: italic;
+  display: block;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}

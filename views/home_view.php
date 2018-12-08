@@ -9,7 +9,7 @@
 <body>
 
     <?php include_once 'views/includes/nav.php'?>
-    <?php include_once 'views/includes/header.php'?>
+    <?php include_once 'views/includes/header_1.php'?>
     
    <div class="container">
         <div class="row">
@@ -50,9 +50,6 @@
             </div>
         </div>
     </div>
-
-    <?php include_once 'views/includes/footer.php'?>
-
     
 <?php include_once 'views/includes/footer.php'?>
 <?php include_once 'views/includes/scriptsLink.php'?>
