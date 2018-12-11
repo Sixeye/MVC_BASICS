@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php include_once 'views/includes/nav.php'?>
-    <?php include_once 'views/includes/header-chapitres.php'?>
+    <?php include_once 'views/includes/header_2.php'?>
 
 <article>
         <div class="container">

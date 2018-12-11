@@ -3,10 +3,10 @@
             <div
                 class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="views/home_view.php" data-bs-hover-animate="pulse">ACCUEIL</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="views/chapitres_view.php" data-bs-hover-animate="pulse">CHAPITRES</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="views/aPropos_view.php" data-bs-hover-animate="pulse">A PROPOS</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="views/contact_view.php" data-bs-hover-animate="pulse">CONTACTEZ-MOI</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?page=home" data-bs-hover-animate="pulse">ACCUEIL</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?page=articles" data-bs-hover-animate="pulse">CHAPITRES</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?page=actualites" data-bs-hover-animate="pulse">A PROPOS</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?page=contact" data-bs-hover-animate="pulse">CONTACTEZ-MOI</a></li>
                 </ul>
             </div>
         </div>
