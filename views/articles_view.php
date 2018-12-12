@@ -15,17 +15,15 @@
                 <div class="col-md-10 col-lg-8 mx-auto">
    
                 <!-- Only sentences href to chapitres page-->
-                    <?php 
-                    
-                    foreach ($allArticles as $index => $article) { ?>
-                    <div class="post-preview">
-                        <h2 class="section-heading"><?= $article['title'] ?></h2>
-                        <h3 class="post-subtitle"><?= $article['sentence'] ?></h3>
-                        <p><?= $article['content'] ?></p>
-                        <br>
-                        <p class="post-meta">Posté par&nbsp;<a href="index.php?page=contact"><?= $article['firstname'].' '.$article['lastname'] ?> &nbsp;<?= date_format(date_create($article['date']), "d.m.Y H:i:s") ?></a></p>
-                    </div>
-                <?php } ?>                
+                    <?php foreach ($allArticles as $index => $article): ?>
+                        <div class="post-preview">
+                            <h2 class="section-heading"><?= $article['title'] ?></h2>
+                            <h3 class="post-subtitle"><?= $article['sentence'] ?></h3>
+                            <p><?= $article['content'] ?></p>
+                            <br>
+                            <p class="post-meta">Posté par&nbsp;<a href="index.php?page=contact"><?= $article['firstname'].' '.$article['lastname'] ?> &nbsp;<?= date_format(date_create($article['date']), "d.m.Y H:i:s") ?></a></p>
+                        </div>
+                    <?php endforeach; ?>                
                     <hr>
 
                     
