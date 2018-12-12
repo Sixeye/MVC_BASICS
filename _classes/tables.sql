@@ -18,3 +18,13 @@ CREATE TABLE articles (
     author_id INT NOT NULL,
     category_id INT NOT NULL
 );
+
+CREATE TABLE actualites (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    sentence VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    date DATETIME DEFAULT NOW(),
+    author_id INT NOT NULL,
+    category_id INT NOT NULL
+);

@@ -13,11 +13,24 @@
     <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
-                    <p>J'ai été "trader", opérateur de marché financier, pendant 7 ans. <br>A la mort de ma mère, j'ai effectué un voyage initiatique dans le nord du Canada. Je me suis ensuite installé à Montréal.</p>
-                    <p>Dans le grand nord, j'ai été confronté à l'idée de l'absurdité de la vie. Ce grand cyle que nous subissons. J'y ai ressenti le besoin de m'extraire de la cité pour mieux percevoir l'essentiel. Nous n'avons que peu de temps sur Terre pour
-                        apporter le meilleur à son prochain et à cette petite planète bleue.</p>
-                    <p>Avec "Un billet pour l'Alaska", j'ai mis dans une aventure fictive mon parcours initiatique à travers le riche personnage d'Anna Jakin.</p>
+   
+                <!-- Only sentences href to chapitres page-->
+                    <?php 
+                    
+                    foreach ($allActualites as $index => $actualite) { ?>
+                    <div class="post-preview">
+                        <h2 class="section-heading"><?= $actualite['title'] ?></h2>
+                        <h3 class="post-subtitle"><?= $actualite['sentence'] ?></h3>
+                        <p><?= $actualite['content'] ?></p>
+                        <br>
+                        <p class="post-meta">Posté par&nbsp;<a href="index.php?page=contact"><?= $actualite['firstname'].' '.$actualite['lastname'] ?> &nbsp;<?= date_format(date_create($actualite['date']), "d.m.Y H:i:s") ?></a></p>
+                    </div>
+                <?php } ?>                
+                    <hr>
+
+                    
                 </div>
+            </div>
             </div>
         </div>
         <hr>

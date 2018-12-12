@@ -7,9 +7,9 @@ public $firstname;
 public $lastname;
 
 /**
-* Authors constructor.
-* @param $id
-*/
+ * Authors constructor.
+ * @param $id
+ */
 function __construct($id){
     global $db;
 
@@ -25,9 +25,9 @@ function __construct($id){
 }
 
 /**
-* Send all authors
-* @return array
-*/
+ * Send all authors
+ * @return array
+ */
 static function getAllAuthors(){
 
     global $db;
