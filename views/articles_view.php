@@ -16,7 +16,7 @@
    
                 <!-- Only sentences href to chapitres page-->
                     <?php foreach ($allArticles as $index => $article): ?>
-                        <div class="post-preview">
+                        <div class="post-preview" id="article-<?= $article['id'] ?>">
                             <h2 class="section-heading"><?= $article['title'] ?></h2>
                             <h3 class="post-subtitle"><?= $article['sentence'] ?></h3>
                             <p><?= $article['content'] ?></p>

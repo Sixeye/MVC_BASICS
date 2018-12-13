@@ -55,11 +55,35 @@ class Articles{
             FROM articles a 
             INNER JOIN authors au ON au.id = a.author_id
             INNER JOIN categories c ON c.id = a.category_id
+            ORDER BY id DESC
         ');
         $reqArticles->execute([]);
         return $reqArticles->fetchAll();
 
     }
+
+/**
+* Sends two last articles.
+* @return array
+*/
+
+    static function getLastArticles() {
+
+        global $db;
+
+        $reqArticles = $db->prepare('
+            SELECT a.*, au.firstname, au.lastname, c.name AS category
+            FROM articles a 
+            INNER JOIN authors au ON au.id = a.author_id
+            INNER JOIN categories c ON c.id = a.category_id
+            ORDER BY id DESC
+            LIMIT 2
+        ');
+        $reqArticles->execute([]);
+        return $reqArticles->fetchAll();
+
+    }
+
 }
 
 ?>
