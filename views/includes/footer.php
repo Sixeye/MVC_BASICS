@@ -7,7 +7,7 @@
                         <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></li>
                         <li class="list-inline-item"></li>
                     </ul>
-                    <p class="text-muted copyright">Copyright&nbsp;©&nbsp;JEAN FORTEROCHE 2018&nbsp;&nbsp;<a href="index.php?page=admin">admin</a></p>
+                    <p class="text-muted copyright">Copyright&nbsp;©&nbsp;JEAN FORTEROCHE 2019&nbsp;&nbsp;<a href="index.php?page=admin">admin</a></p>
                 </div>
             </div>
         </div>

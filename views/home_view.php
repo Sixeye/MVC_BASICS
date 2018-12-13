@@ -26,7 +26,7 @@
                 <?php endforeach; ?>                
 
                 <hr>
-                <div class="clearfix"><button class="btn btn-primary float-right" type="button"><a href= "index.php?page=articles">ANCIENS CHAPITRES ⇒</a></button></div>
+                <div class="clearfix"><button class="btn btn-primary float-right" type="button"><a href= "articles">ANCIENS CHAPITRES ⇒</a></button></div>
             </div>
         </div>
     </div>

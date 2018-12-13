@@ -4,7 +4,7 @@ class Categories{
 
 public $id;
 public $name;
-/**
+    /**
      * Categories constructor.
      * @param $id
      */
