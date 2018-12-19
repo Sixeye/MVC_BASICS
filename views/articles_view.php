@@ -21,6 +21,12 @@
                             <h3 class="post-subtitle"><?= $article['sentence'] ?></h3>
                             <p><?= $article['content'] ?></p>
                             <br>
+                            <div class="form-group">
+                                <label for="comment">Commentaire:</label>
+                                <textarea class="form-control" rows="5" id="comment" required></textarea>
+                                <button class="btn btn-outline-dark" type="submit">Soumettre</button>
+                            </div>
+                            <br>
                             <p class="post-meta">Posté par&nbsp;<a href="index.php?page=contact"><?= $article['firstname'].' '.$article['lastname'] ?> &nbsp;<?= date_format(date_create($article['date']), "d.m.Y H:i:s") ?></a></p>
                         </div>
                     <?php endforeach; ?>                

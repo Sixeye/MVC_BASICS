@@ -28,3 +28,9 @@ CREATE TABLE actualites (
     author_id INT NOT NULL,
     category_id INT NOT NULL
 );
+
+CREATE TABLE commentaires (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    content TEXT NOT NULL,
+    date DATETIME DEFAULT NOW()
+);

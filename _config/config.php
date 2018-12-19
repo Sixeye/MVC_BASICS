@@ -26,12 +26,12 @@ define("PATH_REQUIRE", substr($_SERVER['SCRIPT_FILENAME'], 0, -9)); // Pour fonc
 define("PATH", substr($_SERVER['PHP_SELF'], 0, -9)); // Pour images, fichiers etc (html)
 
 // Website informations
-define("WEBSITE_TITLE", "Mon site");
-define("WEBSITE_NAME", "Mon site");
+define("WEBSITE_TITLE", "BLOG ROMAN BILLET POUR L ALASKA");
+define("WEBSITE_NAME", "ROMAN ALASKA FORTEROCHE");
 define("WEBSITE_URL", "https://monsite.com");
 define("WEBSITE_DESCRIPTION", "Description du site");
 define("WEBSITE_KEYWORDS", "");
-define("WEBSITE_LANGUAGE", "");
+define("WEBSITE_LANGUAGE", "FRANCAIS");
 define("WEBSITE_AUTHOR", "");
 define("WEBSITE_AUTHOR_MAIL", "");
 
@@ -46,5 +46,3 @@ define("DATABASE_HOST", "localhost");
 define("DATABASE_NAME", "test");
 define("DATABASE_USER", "root");
 define("DATABASE_PASSWORD", "");
-
-

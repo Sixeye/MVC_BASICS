@@ -7,11 +7,12 @@ if (!empty($_POST) && isset($_POST['btnContact'])){
         $phone = str_secur($_POST['phone']);
         $message = str_secur($_POST['message']);
 
-        $messagesent.= '- message envoyé par: ' . $nom . ' dont le mail est ' . $email . ' et le téléphone est ' . $phone . '<br>' . 'Voici son message: ' . $message;
-        debug($messagesent); 
+        $messagesent.= '- message envoyé par: ' . $nom . ' dont le mail est ' . $email . ' et le téléphone est ' . $phone . '<br>' . 'Voici son message: ' . $message; 
 
         //send an e-mail
         mail('srinath@srinath.fr', 'Message reçu sur le blog de Jean Forteroche', $message);
+
+        echo $nom . ', nous vous remercions pour votre message.';
 
     } else {
         $error = "Veuillez remplir tous les champs.";

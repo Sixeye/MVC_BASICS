@@ -4,7 +4,7 @@ to do list
 -contact page to conceive
 -comments on each bill
 -create a moderation system for the comments
--create an admin page
+-create an admin page -> Access to articles or actualites AND a moderation part on comments
 -create an admin wysiwyg for the author
 -create an admin wysiwyg for the agent
 -check the indentation and comment when necessary

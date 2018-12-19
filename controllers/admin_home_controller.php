@@ -1,0 +1,5 @@
+<?php
+
+$allArticles = Articles::getLastArticles();
+
+?>
