@@ -151,6 +151,31 @@
 
                         <?php include_once 'views/includes/admin_header_posts.php'?>
 
+                        <form action="admin_posts" method="POST">
+
+                            <div class="form-group">
+                                <label for="title">TITRE</label>
+                                <input type="text" class="form-control" name="title">
+
+                                <label for="sentence">PHRASE</label>
+                                <input type="text" class="form-control" name="sentence">
+
+                                <label for="content">CONTENU</label>
+                                <input type="text" class="form-control" name="content">
+
+                                <label for="author_id">N° AUTEUR</label>
+                                <input type="text" class="form-control" name="author_id">
+
+                                <label for="category_id">N°CATEGORIE</label>
+                                <input type="text" class="form-control" name="category_id">
+
+                                <div class="form-group"><input type="submit" class="btn btn-primary" name"create_post" value="PUBLIER">
+                                </div>
+
+                            </div>
+
+                        </form>
+
                         <table class="table table-hover table-bordered">
                             <thead>
                                 <tr>
@@ -164,15 +189,35 @@
                                 </tr>
                             </thead>
                             <tbody>
+
+                                <?php foreach ($allArticles as $index => $article): ?>
+
                                 <tr>
-                                    <td>TEST 112</td>
-                                    <td>TEST C'est ici</td>
-                                    <td>TEST Ici, le blanc était la vie, la neige la poésie.</td>
-                                    <td>TEST La neige perturba le repas de Samuel Harakiro. Son père était du Japon et sa mère de Suède. Il avait hérité d'une nature calme.</td>
-                                    <td>31.12.2018</td>
-                                    <td>Jean Forteroche</td>
-                                    <td>1</td>
+                                    <td>
+                                        <?=$article['id']?>
+                                    </td>
+                                    <td>
+                                        <?=$article['title']?>
+                                    </td>
+                                    <td>
+                                        <?=$article['sentence']?>
+                                    </td>
+                                    <td>
+                                        <?=$article['content']?>
+                                    </td>
+                                    <td>
+                                        <?=$article['date']?>
+                                    </td>
+                                    <td>
+                                        <?=$article['author_id']?>
+                                    </td>
+                                    <td>
+                                        <?=$article['category_id']?>
+                                    </td>
                                 </tr>
+
+                                <?php endforeach; ?>
+
                             </tbody>
                         </table>
 

@@ -83,6 +83,33 @@ class Articles{
         return $reqArticles->fetchAll();
 
     }
+    
+    static function createArticles() {
+        global $db;
+
+        if (!empty($_POST)){
+            
+            $post_title = $_POST['title'];
+            $post_sentence = $_POST['sentence'];
+            $post_content = $_POST['content'];
+            $post_author_id = $_POST['author_id'];
+            $post_category_id = $_POST['category_id'];
+            $date = (now);
+
+            $reqArticles = $db->prepare('INSERT INTO articles(title, sentence, content, date, author_id, category_id) VALUES(?, ?, ?, ?, ?, ?)');
+            
+            $reqArticles->bindParam('1', $post_title);
+            $reqArticles->bindParam('2', $post_sentence);
+            $reqArticles->bindParam('3', $post_content);
+            $reqArticles->bindParam('4', (date('Y-m-d H:i:s')));
+            $reqArticles->bindParam('5', $post_author_id);
+            $reqArticles->bindParam('6', $post_category_id);  
+                  
+            $reqArticles->execute();
+           
+        }
+        
+    }
 
 }
 
