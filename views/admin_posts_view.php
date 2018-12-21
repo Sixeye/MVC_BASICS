@@ -216,8 +216,8 @@
                                         <?=$article['category_id']?>
                                     </td>
                                     <td>
-                                        <form method="post">
-                                            <input type="hidden" name='articleDelete' value="<?php echo $article['id']?>">
+                                        <form action="admin_posts" method="post">
+                                            <input type="hidden" name='delete' value="<?php echo $article['id']?>">
                                             <button type='submit' name='articlesDelete'>Effacer</button>
                                         </form>
                                     </td>

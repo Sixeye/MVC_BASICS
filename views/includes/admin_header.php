@@ -6,10 +6,10 @@
         <ol class="breadcrumb">
             <li>
                 <i class="fa fa-dashboard"></i>
-                <a href="index.html">TABLEAU DE BORD</a>
+                <a href="admin_home">TABLEAU DE BORD</a>
             </li>
             <li class="active">
-                <i class="fa fa-file"></i> Page vierge
+                <i class="fa fa-file"></i> Bienvenue
             </li>
         </ol>
     </div>

@@ -1,7 +1,7 @@
 <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav side-nav">
         <li>
-            <a href="#"><i class="fa fa-fw fa-dashboard"></i> TABLEAU DE BORD</a>
+            <a href="admin_home"><i class="fa fa-fw fa-dashboard"></i> TABLEAU DE BORD</a>
         </li>
         <li>
             <a href="#"><i class="fa fa-fw fa-desktop"></i> ACTUALITES</a>
@@ -13,21 +13,10 @@
             <a href="#"><i class="fa fa-fw fa-wrench"></i> COMMENTAIRES</a>
         </li>
         <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-            <ul id="demo" class="collapse">
-                <li>
-                    <a href="#">A voir</a>
-                </li>
-                <li>
-                    <a href="#">A voir</a>
-                </li>
-            </ul>
-        </li>
-        <li class="active">
-            <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Page blanche</a>
+            <a href="#"><i class="fa fa-envelope"></i> MESSAGES</a>
         </li>
         <li>
-            <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL tableau de bord</a>
+            <a href="home"><i class="fa fa-chevron-circle-left"></i> retour au site</a>
         </li>
     </ul>
 </div>

@@ -90,10 +90,10 @@ class Articles{
 */
 
     
-    public function createArticles() {
+    static function createArticles() {
         global $db;
 
-        if (!empty($_POST)){
+        if (isset($_POST['create_post'])){
             
             $post_title = str_secur($_POST['title']);
             $post_sentence = str_secur($_POST['sentence']);
@@ -112,22 +112,21 @@ class Articles{
             $reqArticles->bindParam('6', $post_category_id);  
                   
             $reqArticles->execute();
+            header("Location: admin_posts");
            
         }
         
     }
     
-    public function deleteArticles(){
+    static function deleteArticles(){
         global $db;
-        if (isset($_POST['deleteId'])){
-        $id = mysql_escape_string($_POST['articleDelete']);
-            debug($id);
-            die();
-        
+        if (isset($_POST['delete'])){
+        $id = ($_POST['delete']);
             $reqArticles = "
-            DELETE FROM articles WHERE id= escape_string($this->$id) LIMIT 1
+            DELETE FROM articles WHERE id= $id LIMIT 1
             ";
         $db->query($reqArticles);
+        header("Location: admin_posts");
         }
     }
 }
