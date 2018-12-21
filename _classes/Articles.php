@@ -84,16 +84,22 @@ class Articles{
 
     }
     
-    static function createArticles() {
+/**
+* Creates a new article thanks to the admin section.
+* @return datas to the DB
+*/
+
+    
+    public function createArticles() {
         global $db;
 
         if (!empty($_POST)){
             
-            $post_title = $_POST['title'];
-            $post_sentence = $_POST['sentence'];
-            $post_content = $_POST['content'];
-            $post_author_id = $_POST['author_id'];
-            $post_category_id = $_POST['category_id'];
+            $post_title = str_secur($_POST['title']);
+            $post_sentence = str_secur($_POST['sentence']);
+            $post_content = str_secur($_POST['content']);
+            $post_author_id = str_secur($_POST['author_id']);
+            $post_category_id = str_secur($_POST['category_id']);
             $date = (now);
 
             $reqArticles = $db->prepare('INSERT INTO articles(title, sentence, content, date, author_id, category_id) VALUES(?, ?, ?, ?, ?, ?)');
@@ -110,7 +116,20 @@ class Articles{
         }
         
     }
-
+    
+    public function deleteArticles(){
+        global $db;
+        if (isset($_POST['deleteId'])){
+        $id = mysql_escape_string($_POST['articleDelete']);
+            debug($id);
+            die();
+        
+            $reqArticles = "
+            DELETE FROM articles WHERE id= escape_string($this->$id) LIMIT 1
+            ";
+        $db->query($reqArticles);
+        }
+    }
 }
 
 ?>

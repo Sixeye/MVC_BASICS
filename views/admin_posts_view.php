@@ -154,22 +154,23 @@
                         <form action="admin_posts" method="POST">
 
                             <div class="form-group">
+
                                 <label for="title">TITRE</label>
-                                <input type="text" class="form-control" name="title">
+                                <input type="text" class="form-control" name="title" required>
 
                                 <label for="sentence">PHRASE</label>
-                                <input type="text" class="form-control" name="sentence">
+                                <input type="text" class="form-control" name="sentence" required>
 
                                 <label for="content">CONTENU</label>
-                                <input type="text" class="form-control" name="content">
+                                <input type="text" class="form-control" name="content" required>
 
                                 <label for="author_id">N° AUTEUR</label>
-                                <input type="text" class="form-control" name="author_id">
+                                <input type="text" class="form-control" name="author_id" required>
 
                                 <label for="category_id">N°CATEGORIE</label>
-                                <input type="text" class="form-control" name="category_id">
+                                <input type="text" class="form-control" name="category_id" required>
 
-                                <div class="form-group"><input type="submit" class="btn btn-primary" name"create_post" value="PUBLIER">
+                                <div class="form-group"><input type="submit" class="btn btn-primary" name="create_post" value="PUBLIER" required>
                                 </div>
 
                             </div>
@@ -213,6 +214,12 @@
                                     </td>
                                     <td>
                                         <?=$article['category_id']?>
+                                    </td>
+                                    <td>
+                                        <form method="post">
+                                            <input type="hidden" name='articleDelete' value="<?php echo $article['id']?>">
+                                            <button type='submit' name='articlesDelete'>Effacer</button>
+                                        </form>
                                     </td>
                                 </tr>
 
