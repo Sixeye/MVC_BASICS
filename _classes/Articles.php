@@ -129,6 +129,25 @@ class Articles{
         header("Location: admin_posts");
         }
     }
-}
+    
+    static function updateArticles(){
+     
+        global $db;
 
+        if (isset($_POST['update'])){
+            $id = (int)($_POST['update']);
+           
+        $reqArticle = $db->query('SELECT * FROM articles WHERE id = $id');
+//        $reqArticle->execute([$id]);
+        $data = $reqArticle->fetch();
+
+        echo $id;
+        echo $data['title'];
+        echo $data['content'];
+        debug($$data['content']);
+            die();
+            
+            }
+    }
+}
 ?>
