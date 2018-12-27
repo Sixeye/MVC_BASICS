@@ -49,32 +49,32 @@
 
                         <!-- Page Heading -->
 
-                        <?php include_once 'views/includes/admin_header_update.php';    
+                        <?php include_once 'views/includes/admin_header_update.php';
                         ?>
 
-                        <form action="admin_posts" method="POST">
+                        <form action="admin_update" method="POST">
 
                             <div class="form-group">
 
-                                <label for="title">ID</label>
-                                <input value="<?=$article['id']?>" type="text" class="form-control" name="title" required>
+                                <label for="id">ID</label>
+                                <input value="<?= $updateId; ?>" type="text" class="form-control" name="u_id" required>
 
                                 <label for="title">TITRE</label>
-                                <input value="<?= $article['title'] ?>" type="text" class="form-control" name="title" required>
+                                <input value="<?= $updateTitle; ?>" type="text" class="form-control" name="u_title" required>
 
                                 <label for="sentence">PHRASE</label>
-                                <input value="<?=$article['sentence']?>" type="text" class="form-control" name="sentence" required>
+                                <input value="<?= $updateSentence ?>" type="text" class="form-control" name="u_sentence" required>
 
                                 <label for="content">CONTENU</label>
-                                <input value="<?=$article['content']?>" type="text" class="form-control" name="content" required>
+                                <input value="<?= $updateContent ?>" type="text" class="form-control" name="u_content" required>
 
                                 <label for="author_id">N° AUTEUR</label>
-                                <input value="<?=$article['author_id']?>" type="text" class="form-control" name="author_id" required>
+                                <input value="<?= $updateAuthor ?>" type="text" class="form-control" name="u_author_id" required>
 
                                 <label for="category_id">N°CATEGORIE</label>
-                                <input value="<?=$article['category_id']?>" type="text" class="form-control" name="category_id" required>
-
-                                <div class="form-group"><input type="submit" class="btn btn-primary" name="create_post" value="PUBLIER" required>
+                                <input value="<?= $updateCategory ?>" type="text" class="form-control" name="u_category_id" required>
+                           
+                                <div class="form-group"><input type="submit" class="btn btn-primary" name="updated_post" value="PUBLIER" required>
                                 </div>
 
                             </div>
@@ -82,16 +82,13 @@
                         </form>
 
                     </div>
+
                 </div>
-
-
 
             </div>
             <!-- /.container-fluid -->
-
         </div>
         <!-- /#page-wrapper -->
-
     </div>
     <!-- /#wrapper -->
 
