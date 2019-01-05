@@ -29,15 +29,18 @@
                             <?= $article['content'] ?>
                         </p>
                         <br>
+                        <form action="admin_posts" method="POST">
                         <div class="form-group">
                             <label for="comment">Commentaire:</label>
                             <textarea class="form-control" rows="5" id="comment" required></textarea>
-                            <button class="btn btn-outline-dark" type="submit">Soumettre</button>
+                            <button class="btn btn-outline-dark" type="submit" required>Soumettre</button>
                         </div>
                         <br>
                         <p class="post-meta">Posté par&nbsp;<a href="index.php?page=contact">
                                 <?= $article['firstname'].' '.$article['lastname'] ?> &nbsp;
-                                <?= date_format(date_create($article['date']), "d.m.Y H:i:s") ?></a></p>
+                                <?= date_format(date_create($article['date']), "d.m.Y H:i:s") ?></a>
+                        </p>
+                        </form>
                     </div>
                     <?php endforeach; ?>
                     <hr>

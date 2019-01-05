@@ -85,7 +85,7 @@ class Articles{
     }
     
 /**
-* Creates a new article thanks to the admin section.
+* Creates a new article thanks to the admin posts section.
 * @return datas to the DB
 */
 
@@ -97,7 +97,7 @@ class Articles{
             
             $post_title = str_secur($_POST['title']);
             $post_sentence = str_secur($_POST['sentence']);
-            $post_content = str_secur($_POST['content']);
+            $post_content = $_POST['content'];
             $post_author_id = str_secur($_POST['author_id']);
             $post_category_id = str_secur($_POST['category_id']);
             $date = (now);
@@ -118,6 +118,11 @@ class Articles{
         
     }
     
+/**
+* Deletes an article thanks to the admin posts section.
+* @return datas to the DB
+*/
+
     static function deleteArticles(){
         global $db;
         if (isset($_POST['delete'])){
@@ -129,7 +134,13 @@ class Articles{
         header("Location: admin_posts");
         }
     }
-    
+  
+/**
+* Fill an article in update page thanks to the ID in admin posts section.
+* @return datas to the DB
+*/
+
+
     static function fillArticles(){
      
         global $db;
@@ -154,7 +165,10 @@ class Articles{
         }
     }
 
-    
+/**
+* Updates an article thanks to an ID. Go back to the posts page.
+* @return datas to the DB
+*/
 
     static function updateArticles(){
             global $db;
@@ -163,7 +177,7 @@ class Articles{
             $updated_id = (int)(str_secur($_POST['u_id']));
             $updated_title = str_secur($_POST['u_title']);
             $updated_sentence = str_secur($_POST['u_sentence']);
-            $updated_content = str_secur($_POST['u_content']);
+            $updated_content = $_POST['u_content'];
             $updated_author_id = str_secur($_POST['u_author_id']);
             $updated_category_id = str_secur($_POST['u_category_id']);
             $date = (now);

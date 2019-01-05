@@ -1,9 +1,10 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 
     <?php include_once 'views/includes/head.php'?>    
-
+  
 </head>
 
 <body>
@@ -16,29 +17,33 @@
             <div class="col-md-10 col-lg-8">
                 <!-- PHP ADMIN-->
                 
-                <form class="form-signin">
+                <form class="form-signin" action="admin_gate" method="POST">
                     <div class="text-center mb-4">
                         
                         <h1 class="h3 mb-3 font-weight-normal">Accès administrateur</h1>
+
+
+                    <div id="error"></div>
+
                     
                     </div>
 
                     <div class="form-label-group">
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Addresse e-mail" required autofocus>
+                        <input type="email" id="inputEmail" name="inputEmail"  class="form-control" placeholder="Adresse e-mail" required autofocus>
                         <label for="inputEmail"></label>
                     </div>
 
                     <div class="form-label-group">
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+                        <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Mot de passe" required>
                         <label for="inputPassword"></label>
                     </div>
 
                     <div class="checkbox mb-3">
                         <label>
-                        <input type="checkbox" value="remember-me"> Se rappeler de moi
+                        <input type="checkbox" value="remember-me" checked> Se rappeler de moi
                         </label>
                     </div>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Valider</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" name="login2019" >Valider</button>
                     <p class="mt-5 mb-3 text-muted text-center">&copy; 2018-2019</p>
                 </form>
 

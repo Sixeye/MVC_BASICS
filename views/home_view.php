@@ -10,8 +10,9 @@
 <body>
 
     <?php include_once 'views/includes/nav.php'?>
+    
     <?php include_once 'views/includes/header_1.php'?>
-
+    
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-lg-8">

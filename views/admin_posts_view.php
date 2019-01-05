@@ -1,9 +1,15 @@
+<?php session_start();
+if($_SESSION['id'] == 2){
+    header("Location: admin_news");
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
 
     <?php include_once 'views/includes/admin_head.php'?>
+    <?php include_once 'views/includes/tiny_header.php' ?>
 
 </head>
 
@@ -28,6 +34,9 @@
 
                 <li class="dropdown">
                     <a><i class="fa fa-user"></i> JEAN FORTEROCHE</a>
+                </li>
+                <li>
+                    <a href="_functions/logout.php"><i class="fa fa-fw fa-power-off"></i>LOG OUT</a>
                 </li>
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
@@ -62,13 +71,13 @@
                                 <input type="text" class="form-control" name="sentence" required>
 
                                 <label for="content">CONTENU</label>
-                                <input type="text" class="form-control" name="content" required>
+                                <input type="text" class="form-control" name="content" id="content">
 
                                 <label for="author_id">N° AUTEUR</label>
-                                <input type="text" class="form-control" name="author_id" required>
+                                <input type="text" class="form-control" name="author_id" value="1" required>
 
                                 <label for="category_id">N°CATEGORIE</label>
-                                <input type="text" class="form-control" name="category_id" required>
+                                <input type="text" class="form-control" name="category_id" value="1" required>
 
                                 <div class="form-group"><input type="submit" class="btn btn-primary" name="create_post" value="PUBLIER" required>
                                 </div>
