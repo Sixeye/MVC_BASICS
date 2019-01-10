@@ -78,8 +78,10 @@ static function verify_author(){
             }
             }
             else{
-                    
+                /* Essayez un try catch ou une gestion d'erreur en tous cas
+                */    
                 header('Location: admin_gate');
+                echo('Une erreur est survenue.');
                 }
         }
 

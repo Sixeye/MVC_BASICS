@@ -8,7 +8,7 @@
             <a href="#"><i class="fa fa-fw fa-wrench"></i> COMMENTAIRES</a>
         </li>
         <li>
-            <a href="#"><i class="fa fa-envelope"></i> MESSAGES</a>
+            <a href="admin_message"><i class="fa fa-envelope"></i> MESSAGES</a>
         </li>
         <li>
             <a href="home"><i class="fa fa-chevron-circle-left"></i> retour au site</a>

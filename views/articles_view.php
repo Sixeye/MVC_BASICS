@@ -17,7 +17,8 @@
                 <div class="col-md-10 col-lg-8 mx-auto">
 
                     <!-- Only sentences href to chapitres page-->
-                    <?php foreach ($allArticles as $index => $article): ?>
+                    <?php foreach ($allArticles as $index => $article): ?>   
+
                     <div class="post-preview" id="article-<?= $article['id'] ?>">
                         <h2 class="section-heading">
                             <?= $article['title'] ?>
@@ -29,20 +30,44 @@
                             <?= $article['content'] ?>
                         </p>
                         <br>
-                        <form action="admin_posts" method="POST">
-                        <div class="form-group">
-                            <label for="comment">Commentaire:</label>
-                            <textarea class="form-control" rows="5" id="comment" required></textarea>
-                            <button class="btn btn-outline-dark" type="submit" required>Soumettre</button>
-                        </div>
-                        <br>
                         <p class="post-meta">Posté par&nbsp;<a href="index.php?page=contact">
-                                <?= $article['firstname'].' '.$article['lastname'] ?> &nbsp;
+                                <?= $article['firstname'] . ' ' . $article['lastname'] ?> &nbsp;
                                 <?= date_format(date_create($article['date']), "d.m.Y H:i:s") ?></a>
                         </p>
+                        <br>
+                        <?php foreach ($getComments[$article['id']] as $comment): ?>
+                        
+                        <p>
+                            <?= $comment['content'] ?>
+                        </p>
+
+                        <br>
+                        <p class="post-meta">Posté par&nbsp;
+                            <p>
+                                <?= $comment['nom'] ?> &nbsp;
+                                <?= date_format(date_create($comment['date']), "d.m.Y H:i:s" ) ?>
+                            </p>
+                            <form action="admin_comments" method="POST">
+                            <div class="form-group">
+                            &nbsp;
+                            <button class="btn btn-outline-dark" type="submit" name="signaler" value="<?= $comment['id'] ?>" required>Signaler</button>
+                            </form>
+                        </div>
+                        </p>
+                        <?php endforeach; ?>
+                        <form action="articles" method="POST">
+                        <div class="form-group">
+                            <label for="comment">Commentaire:</label>
+                            <textarea class="form-control" rows="5" id="comment" name="comment_content" required></textarea>
+                            <label for="comment">Nom:</label>
+                            <input type="text" name="nom" required>
+                            &nbsp;
+                            <button class="btn btn-outline-dark" type="submit" name="comment_post" value="<?= $article['id']  ?>" required>Poster</button>
+                        </div>
+                    
                         </form>
                     </div>
-                    <?php endforeach; ?>
+                    <?php  endforeach; ?>
                     <hr>
 
 

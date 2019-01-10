@@ -15,7 +15,7 @@
                 <p>Vous souhaitez avoir des nouvelles de mes activités ? <br>Salons littéraires, interviews, rencontres
                     littéraires...<br>Veuillez remplir le formulaire ci dessous et envoyez-moi un message.<br>Mais
                     soyez &nbsp;patients.<br></p>
-                <form id="contactForm" name="sentMessage" action="" method="post">
+                <form id="contactForm" name="sentMessage" action="contact" method="post">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls"><label>Nom</label>
                             <input class="form-control" type="text" required="" placeholder="Nom" id="Nom" name="nom">
@@ -36,7 +36,7 @@
                     </div>
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls mb-3"><label>Message</label>
-                            <textarea class="form-control" rows="5" required="" placeholder="Message" id="message" data-validation-required-message="Please enter a message." name="message"></textarea>
+                            <textarea class="form-control" rows="5" required="" placeholder="Message" id="message" data-validation-required-message="Entrez un message." name="message"></textarea>
                             <small class="form-text text-danger help-block"></small>
                         </div>
                     </div>

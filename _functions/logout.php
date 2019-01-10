@@ -1,5 +1,9 @@
 <?php
 
+/*
+A mettre dans la classe session
+*/ 
+
 function logout() {
     session_destroy();
     session_commit();

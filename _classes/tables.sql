@@ -32,5 +32,17 @@ CREATE TABLE actualites (
 CREATE TABLE commentaires (
     id INT PRIMARY KEY AUTO_INCREMENT,
     content TEXT NOT NULL,
+    date DATETIME DEFAULT NOW(),
+    nom VARCHAR (255) NOT NULL,
+    article_id INT NOT NULL,
+    approved TINYINT(1)
+);
+
+CREATE TABLE messages (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    telephone VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
     date DATETIME DEFAULT NOW()
 );
