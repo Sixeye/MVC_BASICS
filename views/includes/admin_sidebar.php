@@ -4,7 +4,7 @@
             <a href="admin_posts"><i class="fa fa-fw fa-edit"></i> ARTICLES</a>
         </li>
         <li>
-            <a href="#"><i class="fa fa-fw fa-wrench"></i> COMMENTAIRES</a>
+            <a href="admin_comments"><i class="fa fa-fw fa-wrench"></i> COMMENTAIRES</a>
         </li>
         <li>
             <a href="admin_message"><i class="fa fa-envelope"></i> MESSAGES</a>

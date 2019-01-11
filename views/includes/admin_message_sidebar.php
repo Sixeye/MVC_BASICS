@@ -4,7 +4,7 @@
             <a href="admin_posts"><i class="fa fa-angle-left"></i> RETOUR ADMIN</a>
         </li>
         <li>
-            <a href="admin_commentaires"><i class="fa fa-fw fa-wrench"></i> COMMENTAIRES</a>
+            <a href="admin_comments"><i class="fa fa-fw fa-wrench"></i> COMMENTAIRES</a>
         </li>
         <li>
             <a href="admin_message"><i class="fa fa-envelope"></i> MESSAGES</a>

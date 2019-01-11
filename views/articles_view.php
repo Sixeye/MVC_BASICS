@@ -47,7 +47,7 @@
                                 <?= $comment['nom'] ?> &nbsp;
                                 <?= date_format(date_create($comment['date']), "d.m.Y H:i:s" ) ?>
                             </p>
-                            <form action="admin_comments" method="POST">
+                            <form action="articles" method="POST">
                             <div class="form-group">
                             &nbsp;
                             <button class="btn btn-outline-dark" type="submit" name="signaler" value="<?= $comment['id'] ?>" required>Signaler</button>

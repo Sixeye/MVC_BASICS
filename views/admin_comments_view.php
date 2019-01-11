@@ -68,11 +68,13 @@
                                     <th>De</th>
                                     <th>Correspondant à l'article</th>
                                     <th>effacer</th>
+                                    <th>garder</th>
+
                                 </tr>
                             </thead>
                             <tbody>
 
-                                <?php foreach ($getAllComments as $index => $comment) : ?>
+                                <?php foreach ($getReportedComments as $index => $comment) : ?>
 
                                 <tr>
                                     <td>
@@ -91,14 +93,18 @@
                                         <?= $comment['article_id'] ?>
                                     </td>
                                     <td>
-                                        <?= $comment[''] ?>
-                                    </td>
-                                    <td>
-                                        <form action="admin_message" method="post">
-                                            <input type="hidden" name='delete' value="<?php echo $message['id'] ?>">
-                                            <button type='submit' name='messageDelete'>Effacer</button>
+                                        <form action="admin_comments" method="post">
+                                            <input type="hidden" name='delete' value="<?php echo $comment['id'] ?>">
+                                            <button type='submit' name='commentDelete' value="<?php echo $comment['id'] ?>">Effacer</button>
                                         </form>
                                     </td>
+                                    <td>
+                                        <form action="admin_comments" method="post">
+                                            <input type="hidden" name='validate' value="<?php echo $comment['id'] ?>">
+                                            <button type='submit' name='commentValidate' value="<?php echo $comment['id'] ?>">garder</button>
+                                        </form>
+                                    </td>
+
 
                                 </tr>
 
