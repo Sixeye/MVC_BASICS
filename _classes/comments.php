@@ -14,8 +14,8 @@ class Comments
      */
 
 
-    public static function createComment()
-    {
+    public static function createComment(){
+
         global $db;
 
         if (isset($_POST['comment_post']) && !empty($_POST['comment_content']) && !empty($_POST['nom'])) {
@@ -36,34 +36,31 @@ class Comments
 
             $reqComments->execute();
             echo $post_nom . ', nous vous remercions pour votre commentaire.';
-
         }
-
     }
 
-    static function getComments($actual_id)
-    {
+    /**
+     * Shows  comments in the article page.
+     * @return datas to the DB
+     */
+
+    static function getComments($actual_id){
         
-        global $db;
+        global $db;  
         if (!empty($actual_id)){ 
         $reqComments = $db->prepare('SELECT * FROM commentaires WHERE article_id = :actual_id ORDER BY id DESC');
         $reqComments->execute([':actual_id' => $actual_id]);
         return $reqComments->fetchAll();
-        
         }
-        
     }
 
-
-
-
     /**
-     * Sends all messages.
+     * Sends all reported comments.
      * @return array
      */
 
-    static function reportedComments()
-    {
+    static function reportedComments(){
+
         global $db;
         if(isset($_POST['signaler'])){
         $signal = $_POST['signaler'];
@@ -71,13 +68,15 @@ class Comments
         $reqComments->bindParam('1', $signal);
         $reqComments->execute();
         echo 'Le commentaire a été signalé. Nous vous remercions.';
-        
         }
-
     }
 
-    static function getReportedComments()
-    {
+    /**
+     * Shows all reported comments.
+     * @return array
+     */
+
+    static function getReportedComments(){
 
         global $db;
 
@@ -89,12 +88,11 @@ class Comments
 
 
     /**
-     * Deletes a message in the admin message section.
+     * Deletes a reported comment in the admin section.
      * @return datas to the DB
      */
 
-    static function deleteComment()
-    {
+    static function deleteComment(){
         global $db;
         if (isset($_POST['commentDelete'])) {
             $id = ($_POST['commentDelete']);
@@ -107,8 +105,12 @@ class Comments
         }
     }
 
-    static function validateComment()
-    {
+    /**
+     * Validate a reported comment, status from false to true (0 to 1).
+     * @return array
+     */
+
+    static function validateComment(){
         global $db;
         if (isset($_POST['commentValidate'])) {
             $id = ($_POST['commentValidate']);
@@ -120,6 +122,5 @@ class Comments
             echo 'Le commentaire a été validé.';
         }
     }
-
 }
 ?>

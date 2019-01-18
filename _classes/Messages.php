@@ -3,15 +3,14 @@
 class Messages
 {
 
-   
     /**
      * Creates a new message in the contact page.
      * @return datas to the DB
      */
 
 
-    static function createMessages()
-    {
+    static function createMessages(){
+
         global $db;
 
         if (isset($_POST['btnContact'])) {
@@ -31,14 +30,16 @@ class Messages
             $reqMessages->bindParam('5', (date('Y-m-d H:i:s')));
 
             $reqMessages->execute();
-
-
         }
-
     }
 
-    static function msg_to_user()
-    {
+    /**
+     * Creates a new message in the contact page and sends an email to the author. 
+     * @return datas to the DB
+     */
+
+    static function msg_to_user(){
+
         if (!empty($_POST) && isset($_POST['btnContact'])) {
             if (isset($_POST['nom']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['message'])) {
                 $nom = str_secur($_POST['nom']);
@@ -66,15 +67,13 @@ class Messages
      * @return array
      */
 
-    static function getAllMessages()
-    {
+    static function getAllMessages(){
 
         global $db;
 
         $reqMessages = $db->prepare('SELECT * FROM messages ORDER BY id DESC');
         $reqMessages->execute([]);
         return $reqMessages->fetchAll();
-
     }
 
     /**
@@ -82,8 +81,8 @@ class Messages
      * @return datas to the DB
      */
 
-    static function deleteMessage()
-    {
+    static function deleteMessage(){
+
         global $db;
         if (isset($_POST['messageDelete'])) {
             $id = ($_POST['delete']);
@@ -92,6 +91,5 @@ class Messages
             header("Location: admin_message");
         }
     }
-
 }
 ?>

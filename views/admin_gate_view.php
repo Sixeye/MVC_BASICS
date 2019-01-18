@@ -22,9 +22,7 @@
                         
                         <h1 class="h3 mb-3 font-weight-normal">Accès administrateur</h1>
 
-
                     <div id="error"></div>
-
                     
                     </div>
 
@@ -43,6 +41,7 @@
                         <input type="checkbox" value="remember-me" checked> Se rappeler de moi
                         </label>
                     </div>
+                    
                     <button class="btn btn-lg btn-primary btn-block" type="submit" name="login2019" >Valider</button>
                     <p class="mt-5 mb-3 text-muted text-center">&copy; 2018-2019</p>
                 </form>

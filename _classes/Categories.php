@@ -4,6 +4,7 @@ class Categories{
 
 public $id;
 public $name;
+
     /**
      * Categories constructor.
      * @param $id
@@ -20,14 +21,13 @@ public $name;
 
         $this->id = $id;
         $this->name = $data['name'];
-
     }
-
 
     /**
      * Sends all categories
      * @return an array
      */
+
     static function getAllCategories() {
 
         global $db;
@@ -35,9 +35,7 @@ public $name;
         $reqCategories = $db->prepare('SELECT * FROM categories');
         $reqCategories->execute([]);
         return $reqCategories->fetchAll();
-
     }
-
 }
 
 ?>

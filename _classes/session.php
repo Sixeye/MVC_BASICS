@@ -1,6 +1,11 @@
 <?php
     class Session{
 
+    /**
+     * Verification if a session is open and if it is conform in all pages but not in the gate.
+     * @return datas from the DB and compares them
+     */
+
         static function verify_session(){
         if (isset($_SESSION['id']) && isset($_SESSION['secret'])){
             global $db;
@@ -20,6 +25,11 @@
             header('Location: admin_gate');
             }   
     }
+
+    /**
+     * Verification if a session is open and if it is conform, specific to the gate.
+     * @return datas from the DB and compares them
+     */
 
         static function verify_session_gate()
         {

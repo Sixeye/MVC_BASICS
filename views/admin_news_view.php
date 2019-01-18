@@ -144,12 +144,8 @@ if ($_SESSION['id'] == 1) {
                             </tbody>
                         </table>
 
-
-
                     </div>
                 </div>
-
-
 
             </div>
             <!-- /.container-fluid -->

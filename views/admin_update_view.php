@@ -43,7 +43,6 @@ if ($_SESSION['id'] == 2) {
 
             <?php include_once 'views/includes/admin_sidebar.php'?>
 
-
             <!-- /.navbar-collapse -->
         </nav>
 

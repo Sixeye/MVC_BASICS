@@ -46,7 +46,7 @@
             </div>
         </div>
     </div>
-    <hr>
+<hr>
 
 <?php include_once 'views/includes/footer.php'?>
 <?php include_once 'views/includes/scriptsLink.php'?>

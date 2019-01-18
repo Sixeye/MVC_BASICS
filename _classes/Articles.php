@@ -88,7 +88,6 @@ class Articles{
 * Creates a new article thanks to the admin posts section.
 * @return datas to the DB
 */
-
     
     static function createArticles() {
         global $db;
@@ -112,10 +111,8 @@ class Articles{
             $reqArticles->bindParam('6', $post_category_id);  
                   
             $reqArticles->execute();
-            header("Location: admin_posts");
-           
-        }
-        
+            header("Location: admin_posts");           
+        }        
     }
     
 /**
@@ -139,7 +136,6 @@ class Articles{
 * Fill an article in update page thanks to the ID in admin posts section.
 * @return datas to the DB
 */
-
 
     static function fillArticles(){
      

@@ -1,7 +1,8 @@
 <?php
 
 /*
-A mettre dans la classe session
+*Reset Session id and session, Destroys the session
+*
 */ 
 
 function logout() {

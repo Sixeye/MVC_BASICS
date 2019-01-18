@@ -51,6 +51,7 @@
                             <div class="form-group">
                             &nbsp;
                             <button class="btn btn-outline-dark" type="submit" name="signaler" value="<?= $comment['id'] ?>" required>Signaler</button>
+                            
                             </form>
                         </div>
                         </p>
@@ -70,7 +71,6 @@
                     <?php  endforeach; ?>
                     <hr>
 
-
                 </div>
             </div>
             <p><span>&nbsp;Photographs by&nbsp;</span><a href="https://www.pexels.com" id="anciens-articles">John Doe</a>.</p>
@@ -79,6 +79,7 @@
 
     <?php include_once 'views/includes/footer.php'?>
     <?php include_once 'views/includes/scriptsLink.php'?>
+
 </body>
 
 </html>
