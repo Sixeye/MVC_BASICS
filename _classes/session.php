@@ -16,7 +16,7 @@
             $reqAuthor->execute([$id, $secret]);
             while ($author = $reqAuthor->fetch()){
                 if ($id = $author['id'] && $secret = $author['secret']) {
-                    echo ('Connecté');
+
                 } else {
             header('Location: admin_gate');
         }

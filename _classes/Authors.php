@@ -68,8 +68,7 @@ public $lastname;
                     session_start();
                     $_SESSION['id'] = $author_id;
                     $_SESSION['secret'] = $secret;
-                    echo ('Connecté');
-                    header("Location: admin_posts");                
+                    header('Location: admin_posts');                
                 } 
                     elseif($author['email'] == 'veejayseye@gmail.com') {
                     $secret = sha1(sha1($mail) . rand());
@@ -79,18 +78,12 @@ public $lastname;
                     session_start();
                     $_SESSION['id'] = $author_id;
                     $_SESSION['secret'] = $secret;
-                    echo ('Connecté');
-                    header("Location: admin_news");
+                    header('Location: admin_news');
                     }                
                 } 
-                elseif ($pWord = $author['password'] && !$mail = $author['email']) {
-                        echo ('L\'email est incorrect.');
-                    } 
-                elseif (!$pWord = $author['password'] && $mail = $author['email']) {
-                        echo ('Le mot de passe est incorrect.');
-                    }
+
                 else{   
-                    // header('Location: admin_gate');
+                    header('Location: admin_gate');
                     echo('Une erreur est survenue.');
                     }
             }

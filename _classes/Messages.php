@@ -47,7 +47,7 @@ class Messages
                 $phone = str_secur($_POST['phone']);
                 $message = str_secur($_POST['message']);
 
-                $messagesent = '- message envoyé par: ' . $nom . ' dont le mail est ' . $email . ' et le téléphone est ' . $phone . '<br>' . 'Voici son message: ' . $message; 
+                $messagesent = '- message envoyé par: ' . $nom . ' dont le mail est ' . $email . ' et le téléphone est ' . $phone . '\n' . 'Voici son message: ' . $message; 
                 
         // send an e-mail
                 mail('veejayseye@gmail.com', 'Message reçu sur le blog de Jean Forteroche', $messagesent);
