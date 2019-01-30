@@ -1,5 +1,3 @@
 <?php
 
 $allActualites = Actualites::getAllActualites();
-
-?>

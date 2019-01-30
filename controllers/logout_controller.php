@@ -1,0 +1,3 @@
+<?php
+
+    $logout = Session::logout();

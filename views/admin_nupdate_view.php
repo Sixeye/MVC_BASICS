@@ -36,7 +36,7 @@ if ($_SESSION['id'] == 1) {
                     <a><i class="fa fa-user"></i> ANNA DESNOS</a>
                 </li>
                 <li>
-                    <a href="_functions/logout.php"><i class="fa fa-fw fa-power-off"></i>LOG OUT</a>
+                    <a href="logout"><i class="fa fa-fw fa-power-off"></i>LOG OUT</a>
                 </li>
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->

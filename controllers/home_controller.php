@@ -2,4 +2,3 @@
 
 $allArticles = Articles::getLastArticles();
 
-?>
