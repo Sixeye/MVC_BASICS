@@ -7,7 +7,7 @@ include_once '_functions/functions.php';
 
 // Current page definition
 if (isset($_GET['page']) AND !empty($_GET['page'])){
-    $page = trim(strtolower($_GET['page']));
+    $page = rtrim(strtolower($_GET['page']));
 } else {
     $page ='home';
 }
@@ -19,9 +19,9 @@ $allPages = scandir('controllers/');
 if (in_array($page.'_controller.php', $allPages)) {
 
     // Includes the page
-    include_once 'models/'.$page.'_model.php';
+    // include_once 'models/'.$page.'_model.php';
     include_once 'controllers/'.$page.'_controller.php';
-    include_once 'views/'.$page.'_view.php';
+    // include_once 'views/'.$page.'_view.php';
     } else 
     {
     echo "Erreur 404";
