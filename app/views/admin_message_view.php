@@ -38,7 +38,7 @@
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 
-            <?php include_once 'views/includes/admin_message_sidebar.php' ?>
+            <?php include_once 'app/views/includes/admin_message_sidebar.php' ?>
 
 
             <!-- /.navbar-collapse -->
@@ -55,7 +55,7 @@
 
                         <!-- Page Heading -->
 
-                        <?php include_once 'views/includes/admin_header_message.php' ?>
+                        <?php include_once 'app/views/includes/admin_header_message.php' ?>
 
                         
 

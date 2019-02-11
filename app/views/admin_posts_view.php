@@ -41,7 +41,7 @@ if($_SESSION['id'] == 2){
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 
-            <?php include_once 'views/includes/admin_sidebar.php'?>
+            <?php include_once 'app/views/includes/admin_sidebar.php'?>
 
 
             <!-- /.navbar-collapse -->
@@ -58,7 +58,7 @@ if($_SESSION['id'] == 2){
 
                         <!-- Page Heading -->
 
-                        <?php include_once 'views/includes/admin_header_posts.php'?>
+                        <?php include_once 'app/views/includes/admin_header_posts.php'?>
 
                         <form action="admin_posts" method="POST">
 

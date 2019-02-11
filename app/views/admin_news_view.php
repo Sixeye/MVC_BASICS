@@ -41,7 +41,7 @@ if ($_SESSION['id'] == 1) {
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 
-            <?php include_once 'views/includes/admin_sidebar2.php'?>
+            <?php include_once 'app/views/includes/admin_sidebar2.php'?>
 
 
             <!-- /.navbar-collapse -->
@@ -58,7 +58,7 @@ if ($_SESSION['id'] == 1) {
 
                         <!-- Page Heading -->
 
-                        <?php include_once 'views/includes/admin_header_news.php'?>
+                        <?php include_once 'app/views/includes/admin_header_news.php'?>
 
                         <form action="admin_news" method="POST">
 

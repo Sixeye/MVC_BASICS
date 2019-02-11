@@ -35,12 +35,6 @@
                         <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Mot de passe" required>
                         <label for="inputPassword"></label>
                     </div>
-
-                    <div class="checkbox mb-3">
-                        <label>
-                        <input type="checkbox" value="remember-me" checked> Se rappeler de moi
-                        </label>
-                    </div>
                     
                     <button class="btn btn-lg btn-primary btn-block" type="submit" name="login2019" >Valider</button>
                     <p class="mt-5 mb-3 text-muted text-center">&copy; 2018-2019</p>
