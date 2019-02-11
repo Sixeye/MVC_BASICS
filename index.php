@@ -1,8 +1,6 @@
 <?php
-// Includes principal files
-// include_once '_config/config.php';
-// include_once '_config/db.php';
-include_once '_functions/functions.php';
+// Include basic functions
+include_once 'app/_functions/functions.php';
 
 
 // Current page definition
@@ -13,18 +11,14 @@ if (isset($_GET['page']) AND !empty($_GET['page'])){
 }
 
 // Array with all pages
-$allPages = scandir('controllers/');
+$allPages = scandir('app/controllers/');
 
 // Verifies if the page exists
 if (in_array($page.'_controller.php', $allPages)) {
 
-    // Includes the page
-    // include_once 'models/'.$page.'_model.php';
-    include_once 'controllers/'.$page.'_controller.php';
-    // include_once 'views/'.$page.'_view.php';
+    // Includes the asked page
+    include_once 'app/controllers/'.$page.'_controller.php';
     } else 
     {
     echo "Erreur 404";
     }
-
-?>
