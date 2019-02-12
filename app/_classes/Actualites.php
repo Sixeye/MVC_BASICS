@@ -1,6 +1,7 @@
 <?php
 
-class Actualites{
+class Actualites
+{
     
     public $id;
     public $title;
@@ -10,13 +11,13 @@ class Actualites{
     public $author;
     public $category;
 
-
 /**
 * Actualites constructor.
 * @param $id
 */
 
-    function __construct($id){
+    function __construct($id)
+    {
         global $db;
 
         $id = str_secur($id);
@@ -38,7 +39,6 @@ class Actualites{
         $this->date = $data['date'];
         $this->author = $data['firstname'] . ' ' . $data['lastname'];
         $this->category = $data['category'];
-
     }
 
 /**
@@ -46,7 +46,8 @@ class Actualites{
 * @return array
 */
 
-  static function getAllActualites() {
+  static function getAllActualites()
+  {
 
         global $db;
 
@@ -59,21 +60,19 @@ class Actualites{
         ');
         $reqActualites->execute([]);
         return $reqActualites->fetchAll();
-
     }
 
   /**
 * Creates a news thanks to the admin news section.
 * @return datas to the DB
 */
-
     
     static function createActualites() 
     {
         global $db;
        
-        if (isset($_POST['create_news'])) {
-    
+        if (isset($_POST['create_news']))
+        {    
             $post_title = str_secur($_POST['ntitle']);
             $post_sentence = str_secur($_POST['nsentence']);
             $post_content = $_POST['content'];
@@ -91,10 +90,8 @@ class Actualites{
             $reqActualites->bindParam('6', $post_category_id);  
                   
             $reqActualites->execute();
-            header("Location: admin_news");
-           
+            header("Location: admin_news");  
         }
-        
     }
     
 /**
@@ -102,10 +99,12 @@ class Actualites{
 * @return datas to the DB
 */
 
-    static function deleteActualites(){
+    static function deleteActualites()
+    {
         global $db;
-        if (isset($_POST['n_delete'])){
-        $id = ($_POST['n_delete']);
+        if (isset($_POST['n_delete']))
+        { 
+            $id = ($_POST['n_delete']);
             $reqActualites = "
             DELETE FROM actualites WHERE id= $id LIMIT 1
             ";
@@ -120,8 +119,8 @@ class Actualites{
 */
 
 
-    static function fillActualites(){
-     
+    static function fillActualites()
+    { 
         global $db;
         global $nupdateId;
         global $nupdateTitle;
@@ -130,7 +129,8 @@ class Actualites{
         global $nupdateAuthor;
         global $nupdateCategory;
 
-        if (isset($_POST['nupdate'])){
+        if (isset($_POST['nupdate']))
+        {
             $id = (int)($_POST['nupdate']);
             $reqActualites = $db->prepare("SELECT * FROM actualites WHERE id = $id");
             $reqActualites->execute();
@@ -149,10 +149,11 @@ class Actualites{
 * @return datas to the DB
 */
 
-    static function updateActualites(){
+    static function updateActualites()
+    {
             global $db;
-            if (isset($_POST['nUpdated_post'])){
-
+            if (isset($_POST['nUpdated_post']))
+            {
             $nupdated_id = (int)(str_secur($_POST['nu_id']));
             $nupdated_title = str_secur($_POST['nu_title']);
             $nupdated_sentence = str_secur($_POST['nu_sentence']);

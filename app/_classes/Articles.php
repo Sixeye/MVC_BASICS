@@ -2,14 +2,13 @@
 
 class Articles{
     
-    public $id;
-    public $title;
-    public $sentence;
-    public $content;
-    public $date;
-    public $author;
-    public $category;
-
+    public  $id;
+    public  $title;
+    public  $sentence;
+    public  $content;
+    public  $date;
+    public  $author;
+    public  $category;
 
 /**
 * Articles constructor.
@@ -17,7 +16,7 @@ class Articles{
 */
 
     function __construct($id){
-        global $db;
+        $db = Db::connexion();
 
         $id = str_secur($id);
 
@@ -46,10 +45,10 @@ class Articles{
 * @return array
 */
 
-  static function getAllArticles() {
+  static function getAllArticles()
+  {
 
-        global $db;
-
+        $db = Db::connexion();
         $reqArticles = $db->prepare('
             SELECT a.*, au.firstname, au.lastname, c.name AS category
             FROM articles a 
@@ -59,7 +58,6 @@ class Articles{
         ');
         $reqArticles->execute([]);
         return $reqArticles->fetchAll();
-
     }
 
 /**
@@ -67,9 +65,10 @@ class Articles{
 * @return array
 */
 
-    static function getLastArticles() {
+    static function getLastArticles()
+    {
 
-        global $db;
+        $db = db::connexion();
 
         $reqArticles = $db->prepare('
             SELECT a.*, au.firstname, au.lastname, c.name AS category
@@ -89,8 +88,9 @@ class Articles{
 * @return datas to the DB
 */
     
-    static function createArticles() {
-        global $db;
+    static function createArticles()
+    {
+        $db = Db::connexion();
 
         if (isset($_POST['create_post'])){
             
@@ -120,8 +120,9 @@ class Articles{
 * @return datas to the DB
 */
 
-    static function deleteArticles(){
-        global $db;
+    static function deleteArticles()
+    {
+        $db = Db::connexion();
         if (isset($_POST['delete'])){
         $id = ($_POST['delete']);
             $reqArticles = "
@@ -137,9 +138,9 @@ class Articles{
 * @return datas to the DB
 */
 
-    static function fillArticles(){
-     
-        global $db;
+    static function fillArticles()
+    {
+        $db = Db::connexion();
         global $updateId;
         global $updateTitle;
         global $updateSentence;
@@ -167,7 +168,7 @@ class Articles{
 */
 
     static function updateArticles(){
-            global $db;
+            $db = Db::connexion();
             if (isset($_POST['updated_post'])){
 
             $updated_id = (int)(str_secur($_POST['u_id']));

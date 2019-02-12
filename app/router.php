@@ -1,8 +1,10 @@
 <?php
-// Load Config
-require_once 'app/_config/config.php';
 // Include basic functions
 include_once 'app/_functions/functions.php';
+// Load Config
+include_once 'app/_config/config.php';
+// Load Db Class
+include_once 'app/_classes/Db.php';
 
 // Autoload Classes, to do when models are correct with their own classes.
 // spl_autoload_register(function ($className) {

@@ -1,5 +1,4 @@
 <?php
-
 // --------------------------- //
 //       ERRORS DISPLAY        //
 // --------------------------- //
@@ -28,9 +27,9 @@ define("PATH", substr($_SERVER['PHP_SELF'], 0, -9)); // Pour images, fichiers et
 // Website informations
 define("WEBSITE_TITLE", "BLOG ROMAN BILLET POUR L ALASKA");
 define("WEBSITE_NAME", "ROMAN ALASKA FORTEROCHE");
-define("WEBSITE_URL", "https://monsite.com");
+define("WEBSITE_URL", "https://www.srinath-pro.com/MVC_BASICS");
 define("WEBSITE_DESCRIPTION", "Description du site");
-define("WEBSITE_KEYWORDS", "");
+define("WEBSITE_KEYWORDS", "Jean Forteroche");
 define("WEBSITE_LANGUAGE", "FRANCAIS");
 define("WEBSITE_AUTHOR", "");
 define("WEBSITE_AUTHOR_MAIL", "");
@@ -46,3 +45,4 @@ define("DATABASE_HOST", "localhost");
 define("DATABASE_NAME", "test");
 define("DATABASE_USER", "root");
 define("DATABASE_PASSWORD", "");
+$test = DATABASE_HOST;
