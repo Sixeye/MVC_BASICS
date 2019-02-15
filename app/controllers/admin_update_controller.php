@@ -1,6 +1,7 @@
 <?php
 
-include_once 'app/models/admin_update_model.php';
+include_once 'app/models/Session.php';
+include_once 'app/models/Articles.php';
 
 $verify_session   = Session::verify_session();
 $allArticles      = Articles::getAllArticles();

@@ -1,5 +1,5 @@
 <?php
-    include_once 'app/_models/Articles.php';
+    include_once 'app/models/Articles.php';
 
     $allArticles = Articles::getLastArticles();
 

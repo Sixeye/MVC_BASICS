@@ -1,5 +1,10 @@
 <?php
-include_once 'app/models/articles_model.php';
+
+include_once 'app/models/Db.php';
+
+include_once 'app/models/Articles.php';
+
+include_once 'app/models/Comments.php';
 
 $allArticles      = Articles::getAllArticles();
 $createComment    = Comments::createComment();

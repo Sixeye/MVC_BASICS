@@ -2,7 +2,7 @@
     // Include basic functions
     include_once 'app/_classes/Functions.php';
     // Load Config
-    require_once 'app/_config/config.php';
+    include_once 'app/_config/config.php';
     // Load Db Class
 
     // Autoload Classes, to do when models are correct with their own classes.

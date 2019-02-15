@@ -1,10 +1,11 @@
 <?php
 
-include_once 'app/models/admin_news_model.php';
+    include_once 'app/models/Session.php';
+    include_once 'app/models/Actualites.php';
 
-$verify_session   = Session::verify_session();
-$allActualites    = Actualites::getAllActualites();
-$createActualites = Actualites::createActualites();
-$deleteActualites = Actualites::deleteActualites();
+    $verify_session   = Session::verify_session();
+    $allActualites    = Actualites::getAllActualites();
+    $createActualites = Actualites::createActualites();
+    $deleteActualites = Actualites::deleteActualites();
 
-include_once 'app/views/admin_news_view.php';
+    include_once 'app/views/admin_news_view.php';

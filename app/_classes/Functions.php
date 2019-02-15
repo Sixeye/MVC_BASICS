@@ -13,7 +13,7 @@
      * @return string
      */
 
-        function str_secur($string)
+        static function str_secur($string)
         {
             return trim(htmlspecialchars($string));
         }
@@ -22,7 +22,7 @@
          * Many var debug made easier to read
          * @param $var
          */
-        function debug($var)
+        static function debug($var)
         {
             echo '<pre>';
             var_dump($var);
