@@ -1,28 +1,62 @@
 <?php
 /**
- * Class Dbase
- * Databse connection
+ * Class Db
+ * Database connexion
  */
 
-    class Db
+    class Database
     {
-        private $db;
-        private $host   = "localhost";
-        private $dbname = "test";
-        private $user   = "root";
-        private $pass   = "";
+        private $host   = DATABASE_HOST;
+        private $dbname = DATABASE_NAME;
+        private $user   = DATABASE_USER;
+        private $pass   = DATABASE_PASSWORD;
+
+        private $conn;
+        private $error;
+        private static $_instance;
+
+        /**
+        *Get an instance of the Database
+        *@return Instance
+        */
+        public static function getInstance()
+        {
+            if(!self::$_instance)
+            {
+                self::$_instance = new self();
+            }
+            return self::$_instance;
+        }
 
         /**
          * DB connexion with PDO
          */
-        public function __construct()
+        private function __construct()
         {
+            $options = [PDO::ATTR_ERRMODE => true,
+                        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
+            $this->conn = null;
+
             try {
-                $this->db = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname . ';charset=utf8', $this->user, $this->pass);
-                $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $this->db = $db;
-            } catch (PDOException $e) {
-                echo ('Une erreur est survenue ! ' . $e->getMessage());
+                $this->conn = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname . ';charset=utf8', $this->user, $this->pass, $options);
+                return $this->conn;
+            } catch (PDOException $e)
+            {
+                $this->error = $e->getMessage();
+                echo ('Une erreur est survenue ! ' . $this->error);
             }
         }
+
+        // Magic method clone is empty to prevent duplication of connection
+        private function __clone()
+        {
+
+        }
+
+        // Get the connection
+        public function getConnection()
+        {
+            return $this->conn;
+        }
     }
+

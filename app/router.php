@@ -3,12 +3,6 @@
     include_once 'app/_classes/Functions.php';
     // Load Config
     include_once 'app/_config/config.php';
-    // Load Db Class
-
-    // Autoload Classes, to do when models are correct with their own classes.
-    // spl_autoload_register(function ($className) {
-    //     require_once '_classes/' . $className . '.php';
-    // });
 
     // Current page definition
     if (isset($_GET['page']) and !empty($_GET['page']))

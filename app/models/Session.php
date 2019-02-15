@@ -1,4 +1,5 @@
 <?php
+
     class Session{
 
     /**
@@ -8,11 +9,14 @@
 
         static function verify_session(){
         if (isset($_SESSION['id']) && isset($_SESSION['secret'])){
-            global $db;
+
+            $db = Database::getInstance();
+            $conn = $db->getConnection();
+
             $id = $_SESSION['id'];
             $secret = $_SESSION['secret'];
 
-            $reqAuthor = $db->prepare('SELECT * FROM authors WHERE id = ? AND secret = ?');
+            $reqAuthor = $conn->prepare('SELECT * FROM authors WHERE id = ? AND secret = ?');
             $reqAuthor->execute([$id, $secret]);
             while ($author = $reqAuthor->fetch()){
                 if ($id = $author['id'] && $secret = $author['secret']) {
@@ -34,11 +38,14 @@
         static function verify_session_gate()
         {
             if (isset($_SESSION['id']) && isset($_SESSION['secret'])) {
-                global $db;
+
+                $db = Database::getInstance();
+                $conn = $db->getConnection();
+
                 $id = $_SESSION['id'];
                 $secret = $_SESSION['secret'];
 
-                $reqAuthor = $db->prepare('SELECT * FROM authors WHERE id = ? AND secret = ?');
+                $reqAuthor = $conn->prepare('SELECT * FROM authors WHERE id = ? AND secret = ?');
                 $reqAuthor->execute([$id, $secret]);
                 while ($author = $reqAuthor->fetch()) {
                     if ($id = $author['id'] && $secret = $author['secret']) {

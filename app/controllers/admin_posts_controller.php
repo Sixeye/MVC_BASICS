@@ -1,11 +1,11 @@
 <?php
+    include_once 'app/models/Db.php';
+    include_once 'app/models/Session.php';
+    include_once 'app/models/Articles.php';
 
-include_once 'app/models/Session.php';
-include_once 'app/models/Articles.php';
+    $verify_session   = Session::verify_session();
+    $allArticles      = Articles::getAllArticles();
+    $createArticles   = Articles::createArticles();
+    $deleteArticles   = Articles::deleteArticles();
 
-$verify_session   = Session::verify_session();
-$allArticles      = Articles::getAllArticles();
-$createArticles   = Articles::createArticles();
-$deleteArticles   = Articles::deleteArticles();
-
-include_once 'app/views/admin_posts_view.php';
+    include_once 'app/views/admin_posts_view.php';
