@@ -1,6 +1,6 @@
 <?php
-include_once 'app/models/home_model.php';
+    include_once 'app/_models/Articles.php';
 
-$allArticles = Articles::getLastArticles();
+    $allArticles = Articles::getLastArticles();
 
-include_once 'app/views/home_view.php';
+    include_once 'app/views/home_view.php';
