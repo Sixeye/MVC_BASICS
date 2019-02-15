@@ -5,7 +5,7 @@ class Messages
 
     /**
      * Creates a new message in the contact page.
-     * @return datas to the DB
+     * @sends data to the DB
      */
 
 
@@ -35,7 +35,7 @@ class Messages
 
     /**
      * Creates a new message in the contact page and sends an email to the author. 
-     * @return datas to the DB
+     * @sends data to the DB
      */
 
     static function msg_to_user(){
@@ -78,7 +78,7 @@ class Messages
 
     /**
      * Deletes a message in the admin message section.
-     * @return datas to the DB
+     * @deletes data to the DB
      */
 
     static function deleteMessage(){

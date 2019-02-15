@@ -1,5 +1,5 @@
 <?php
-    include_once 'app/models/logout_model.php';
+    include_once 'app/models/Session.php';
 
     $logout = Session::logout();
 
