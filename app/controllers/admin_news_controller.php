@@ -9,4 +9,6 @@
     $createActualites = Actualites::createActualites();
     $deleteActualites = Actualites::deleteActualites();
 
+    ob_start();
     include_once 'app/views/admin_news_view.php';
+    ob_end_flush();

@@ -6,4 +6,6 @@
 
     $allActualites = Actualites::getAllActualites();
 
+    ob_start();
     include_once 'app/views/actualites_view.php';
+    ob_end_flush();

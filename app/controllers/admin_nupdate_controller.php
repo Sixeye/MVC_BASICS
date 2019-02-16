@@ -9,4 +9,6 @@
     $fillActualites   = Actualites::fillActualites();
     $updateActualites = Actualites::updateActualites();
 
+    ob_start();
     include_once 'app/views/admin_nupdate_view.php';
+    ob_end_flush();
