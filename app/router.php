@@ -1,6 +1,6 @@
 <?php
     // Include basic functions
-    include_once 'app/_classes/Functions.php';
+    include_once 'app/services/SecurityService.php';
     // Load Config
     include_once 'app/_config/config.php';
 

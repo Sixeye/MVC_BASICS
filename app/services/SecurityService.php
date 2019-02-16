@@ -17,16 +17,4 @@
         {
             return trim(htmlspecialchars($string));
         }
-
-        /**
-         * Many var debug made easier to read
-         * @param $var
-         */
-        static function debug($var)
-        {
-            echo '<pre>';
-            var_dump($var);
-            echo '</pre>';
-            die();
-        }
      }

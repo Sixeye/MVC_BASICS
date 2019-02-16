@@ -1,8 +1,8 @@
 <?php
-/**
- * Class Db
- * Database connexion
- */
+    /**
+    *Class DataBase
+    *#Database connexion
+    */
 
     class Database
     {
