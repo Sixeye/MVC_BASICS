@@ -1,7 +1,5 @@
 <?php
-
-    require_once '../models/Database.php';
-    use models\Article;
+    require ('app/models/Database.php');
 
     /**
      * Created by PhpStorm.
@@ -19,26 +17,26 @@
          */
         public function __construct($id)
         {
-            $this->conn = Database::getConnection();
-            $id = SecurityService::str_secur($id);
+            //$this->conn = Database::getConnection();
+            //$id = SecurityService::str_secur($id);
 
-            $reqArticle = $this->conn->prepare('
-                SELECT a.*, au.firstname, au.lastname, c.name AS category
-                FROM articles a
-                INNER JOIN authors au ON au.id = a.author_id
-                INNER JOIN categories c ON c.id = a.category_id
-                WHERE a.id = ?
-                ');
-            $reqArticle->execute([$id]);
-            $data = $reqArticle->fetch();
+            //$reqArticle = $this->conn->prepare('
+            //    SELECT a.*, au.firstname, au.lastname, c.name AS category
+            //    FROM articles a
+            //    INNER JOIN authors au ON au.id = a.author_id
+            //    INNER JOIN categories c ON c.id = a.category_id
+            //    WHERE a.id = ?
+            //    ');
+            //$reqArticle->execute([$id]);
+            //$data = $reqArticle->fetch();
 
-            $this->id = $id;
-            $this->title = $data['title'];
-            $this->content = $data['content'];
-            $this->sentence = $data['date'];
-            $this->date = $data['date'];
-            $this->author = $data['firstname'] . ' ' . $data['lastname'];
-            $this->category = $data['category'];
+            //$this->id = $id;
+            //$this->title = $data['title'];
+            //$this->content = $data['content'];
+            //$this->sentence = $data['date'];
+            //$this->date = $data['date'];
+            //$this->author = $data['firstname'] . ' ' . $data['lastname'];
+            //$this->category = $data['category'];
         }
 
         /**

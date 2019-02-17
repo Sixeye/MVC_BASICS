@@ -1,10 +1,8 @@
 <?php
 
-    include_once 'app/models/Database.php';
-
-    include_once 'app/models/Article.php';
-
-    include_once 'app/models/Comments.php';
+    require ('app/models/Article.php');
+    require ('app/models/ArticleRepository.php');
+    require ('app/models/Database.php');
 
     $allArticles      = Articles::getAllArticles();
     $createComment    = Comments::createComment();
