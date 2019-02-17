@@ -1,8 +1,9 @@
 <?php
     // Include basic functions
-    include_once 'app/services/SecurityService.php';
+    include_once 'services/SecurityService.php';
+    include_once 'services/DebuggerService.php';
     // Load Config
-    include_once 'app/_config/config.php';
+    include_once '_config/config.php';
 
     // Current page definition
     if (isset($_GET['page']) and !empty($_GET['page']))
@@ -15,11 +16,12 @@
     // Array with all pages
     $allPages = scandir('app/controllers/');
 
-    // Verifies if the page exists
+    // One verifies if the page exists
     if (in_array($page . '_controller.php', $allPages))
         {
             // Includes the asked page
             include_once 'app/controllers/' . $page . '_controller.php';
         } else {
+            // One shows the 404 page
             include_once('app/controllers/404_controller.php');
         }

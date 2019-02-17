@@ -1,5 +1,5 @@
 <?php
-    include_once 'app/models/Db.php';
+    include_once 'app/models/Database.php';
     include_once 'app/models/Session.php';
     include_once 'app/models/Articles.php';
 

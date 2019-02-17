@@ -1,6 +1,6 @@
 <?php
 
-    include_once 'app/models/Db.php';
+    include_once 'app/models/Database.php';
     include_once 'app/models/Messages.php';
 
     $msg_to_user    = Messages::msg_to_user();

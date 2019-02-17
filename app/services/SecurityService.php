@@ -1,11 +1,9 @@
 <?php
 
     /**
-     * 2 functions str_secur secures string in input
-     * debug is a clear var_dump
+     * a function str_secur secures string in input
      */
-
-    class Utility
+    class SecurityService
     {
     /**
      * Allows to secure strings

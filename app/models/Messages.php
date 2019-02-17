@@ -3,25 +3,21 @@
     class Messages
     {
 
+
         /**
          * Creates a new message in the contact page.
          * @sends data to the DB
          */
-
-
         static function createMessages()
         {
-
-            $db = Database::getInstance();
-            $conn = $db->getConnection();
+            $conn = Database::getConnection();
 
             if (isset($_POST['btnContact']))
             {
-
-                $post_nom       = Utility::str_secur($_POST['nom']);
-                $post_email     = Utility::str_secur($_POST['email']);
+                $post_nom       = SecurityService::str_secur($_POST['nom']);
+                $post_email     = SecurityService::str_secur($_POST['email']);
                 $post_telephone = $_POST['phone'];
-                $post_content   = Utility::str_secur($_POST['message']);
+                $post_content   = SecurityService::str_secur($_POST['message']);
                 $date           = (now);
 
                 $reqMessages = $conn->prepare('INSERT INTO messages(nom, email, telephone, content, date) VALUES(?, ?, ?, ?, ?)');
@@ -42,17 +38,16 @@
          * Creates a new message in the contact page and sends an email to the author.
          * @sends data to the DB
          */
-
         static function msg_to_user()
         {
 
             if (!empty($_POST) && isset($_POST['btnContact']))
             {
                 if (isset($_POST['nom']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['message'])) {
-                    $nom     = Utility::str_secur($_POST['nom']);
-                    $email   = Utility::str_secur($_POST['email']);
-                    $phone   = Utility::str_secur($_POST['phone']);
-                    $message = Utility::str_secur($_POST['message']);
+                    $nom     = SecurityService::str_secur($_POST['nom']);
+                    $email   = SecurityService::str_secur($_POST['email']);
+                    $phone   = SecurityService::str_secur($_POST['phone']);
+                    $message = SecurityService::str_secur($_POST['message']);
 
                     $messagesent = '- message envoyé par: ' . $nom . ' dont le mail est ' . $email . ' et le téléphone est ' . $phone . ' ' . 'Voici son message: ' . $message;
 
@@ -73,36 +68,27 @@
          * Sends all messages.
          * @return array
          */
-
         static function getAllMessages()
         {
-            $db = Database::getInstance();
-            $conn = $db->getConnection();
-
+            $conn = Database::getConnection();
             $reqMessages = $conn->prepare('SELECT * FROM messages ORDER BY id DESC');
             $reqMessages->execute([]);
             return $reqMessages->fetchAll();
-
-            $conn = null;
         }
 
         /**
          * Deletes a message in the admin message section.
          * @deletes data to the DB
          */
-
         static function deleteMessage()
         {
-            $db = Database::getInstance();
-            $conn = $db->getConnection();
-
-            if (isset($_POST['messageDelete'])) {
+            $conn = Database::getConnection();
+            if (isset($_POST['messageDelete']))
+            {
                 $id = ($_POST['delete']);
                 $reqMessage = " DELETE FROM messages WHERE id = $id LIMIT 1";
                 $conn->query($reqMessage);
                 header("Location: admin_message");
             }
-
-            $conn = null;
         }
     }
