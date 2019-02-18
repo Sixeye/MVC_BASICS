@@ -1,6 +1,6 @@
 <?php
 
-    namespace models;
+    namespace entity;
 
     /**
      * Created by PhpStorm.
@@ -10,13 +10,13 @@
      */
     class Article
     {
-        private  $id;
-        private  $title;
-        private  $sentence;
-        private  $content;
-        private  $date;
-        private  $author;
-        private  $category;
+        protected  $id;
+        protected  $title;
+        protected  $sentence;
+        protected  $content;
+        protected  $date;
+        protected  $author;
+        protected  $category;
 
         public function __construct($data = [])
         {

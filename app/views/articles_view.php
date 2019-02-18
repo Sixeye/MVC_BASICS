@@ -19,7 +19,7 @@
 
                             <!-- Only sentences href to chapitres page-->
 
-                            <?php foreach ($allArticles as $index => $article): ?>
+                            <?php foreach ($articles as $index => $article): ?>
 
                             <div class="post-preview" id="article-<?= $article['id'] ?>">
                                 <h2 class="section-heading">

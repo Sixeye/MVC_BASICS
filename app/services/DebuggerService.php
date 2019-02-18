@@ -1,5 +1,4 @@
 <?php
-   namespace services;
    /**
     * Created by PhpStorm.
     * User: srinathchristophersamarasinghe
