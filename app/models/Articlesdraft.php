@@ -1,6 +1,6 @@
 <?php
 
-    class Articles
+    //class Articles
     {
         public  $id;
         public  $title;

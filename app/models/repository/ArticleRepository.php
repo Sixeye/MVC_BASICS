@@ -27,7 +27,6 @@
          */
         public function getLastArticles()
         {
-
             $reqArticles = $this->conn->prepare('
                     SELECT a.*, au.firstname, au.lastname, c.name AS category
                     FROM articles a 
@@ -38,7 +37,6 @@
                 ');
             $reqArticles->execute([]);
             return $reqArticles->fetchAll();
-
         }
 
         /**
