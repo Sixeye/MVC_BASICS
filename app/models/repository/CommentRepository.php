@@ -34,14 +34,13 @@
          * Shows  comments in the article page.
          * @return datas to the DB
          */
-        public function showComments()
+        public function showComments($actual_id)
         {
             if (!empty($actual_id))
             {
             $reqComments = $this->conn->prepare('SELECT * FROM commentaires WHERE article_id = :actual_id ORDER BY id DESC');
             $reqComments->execute([':actual_id' => $actual_id]);
             return $reqComments->fetchAll();
-
             }
         }
 

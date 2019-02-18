@@ -38,7 +38,7 @@
                                 </p>
                                 <br>
 
-                                <?php foreach ($getComments[$article['id']] as $comment): ?>
+                                <?php foreach ($showComment[$article['id']] as $comment): ?>
 
                                 <p>
                                     <?= $comment['content'] ?>
