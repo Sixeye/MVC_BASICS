@@ -9,11 +9,11 @@
       */
       class Comment
       {
-          protected $content;
-          protected $date;
-          protected $nom;
-          protected $article_id;
-          protected $approved;
+          private $content;
+          private $date;
+          private $nom;
+          private $article_id;
+          private $approved;
 
           public function __construct($data = [])
           {

@@ -15,24 +15,21 @@
         }
 
 
-        public function createComment()
+        public function createComment(Comment $Comment)
         {
-                $Comment = new Comment();
+                $reqComments = $this->conn->prepare('INSERT INTO commentaires(content, nom, article_id, date, approved) VALUES(:post_content, :post_nom, :post_articleId, :date, :approved)');
 
-                $reqComments = $this->conn->prepare('INSERT INTO commentaires(content, nom, article_id, date, approved) VALUES(?, ?, ?, ?, ?)');
-
-                $reqComments->bindParam('1', $Comment->getContent());
-                $reqComments->bindParam('2', $Comment->getNom());
-                $reqComments->bindParam('3', $Comment->getArticleId());
-                $reqComments->bindParam('4', $Comment->getDate(date('Y-m-d H:i:s')));
-                $reqComments->bindParam('5', $Comment->getApproved());
-
+                $reqComments->bindValue(':post_content', $Comment->getContent(), PDO::PARAM_STR);
+                $reqComments->bindValue(':post_nom', $Comment->getNom(), PDO::PARAM_STR);
+                $reqComments->bindValue(':post_articleId', $Comment->getArticleId(), PDO::PARAM_INT);
+                $reqComments->bindValue(':date', $Comment->getDate());
+                $reqComments->bindValue(':approved', $Comment->getApproved(), PDO::PARAM_INT);
                 $reqComments->execute();
         }
 
         /**
          * Shows  comments in the article page.
-         * @return datas to the DB
+         * @return datas from the DB
          */
         public function showComments($actual_id)
         {

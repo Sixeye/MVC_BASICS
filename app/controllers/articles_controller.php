@@ -1,6 +1,5 @@
 <?php
 
-    use entity\Article;
     use entity\Comment;
 
     require_once('app/models/entity/Article.php');
@@ -18,7 +17,8 @@
         $post_content = SecurityService::str_secur($_POST['comment_content']);
         $post_nom = SecurityService::str_secur($_POST['nom']);
         $post_articleId = $_POST['comment_post'];
-        $date = (now);
+        $date = new \DateTime();
+        $date = $date->format('Y-m-d H:i:s');
         $approved = 1;
 
         $Comment = new Comment();
@@ -30,7 +30,7 @@
 
         $createComment = new CommentRepository();
         $commentCreate = $createComment->createComment($Comment);
-        echo 'Le commentaire a été signalé. Nous vous remercions.';
+        echo $post_nom. ', nous vous remercions pour votre commentaire.';
     }
 
     if(isset($_POST['signaler']))
