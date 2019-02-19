@@ -1,6 +1,6 @@
 <?php
 
-    require ('app/services/LogoutService.php');
+    require ('app/_services/LogoutService.php');
 
     LogoutService::logout();
 

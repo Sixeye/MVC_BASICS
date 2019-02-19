@@ -1,7 +1,7 @@
 <?php
     require ('_config/config.php');
-    require ('services/SecurityService.php');
-    require ('services/DebuggerService.php');
+    require ('_services/SecurityService.php');
+    require ('_services/DebuggerService.php');
 
     // Current page definition
     if (isset($_GET['page']) and !empty($_GET['page']))
