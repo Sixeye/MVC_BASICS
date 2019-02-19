@@ -1,11 +1,18 @@
 <?php
+    use entity\Author;
+    use entity\Article;
 
-//    include_once 'app/models/Articles.php';
+    require ('app/models/repository/AuthorRepository.php');
+    require ('app/models/repository/ArticleRepository.php');
+    require ('app/models/entity/Article.php');
+    require ('app/models/entity/Author.php');
 
-//    $verify_session   = Session::verify_session();
+
 //    $allArticles      = Articles::getAllArticles();
 //    $fillArticles     = Articles::fillArticles();
 //    $updateArticles   = Articles::updateArticles();
+
+    AuthorRepository::login();
 
     ob_start();
     include_once 'app/views/admin_update_view.php';
