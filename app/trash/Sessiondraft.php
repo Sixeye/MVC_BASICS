@@ -1,6 +1,6 @@
 <?php
 
-    class Session{
+    //class Session{
 
     /**
      * Verification if a session is open and if it is conform in all pages but not in the gate.

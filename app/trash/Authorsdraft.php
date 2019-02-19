@@ -1,6 +1,6 @@
 <?php
 
-    class Authors
+    //class Authors
     {
 
     public  $firstname;

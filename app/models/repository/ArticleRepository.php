@@ -1,32 +1,33 @@
 <?php
-    require ('app/models/Database.php');
-    use entity\Article;
-
     /**
      * Created by PhpStorm.
      * User: srinathchristophersamarasinghe
      * Date: 2019-02-16
      * Time: 15:17
      */
-    class ArticleRepository
-    {
+
+     include_once ('app/models/Database.php');
+     use entity\Article;
+
+     class ArticleRepository
+     {
         private $conn;
         public $id;
 
         /**
          * ArticlesRepository constructor.
          */
-        public function __construct()
-        {
+         public function __construct()
+         {
             $this->conn = Database::getConnection();
-        }
+         }
 
         /**
          * Sends two last articles.
          * @return array
          */
-        public function getLastArticles()
-        {
+         public function getLastArticles()
+         {
             $reqArticles = $this->conn->prepare('
                     SELECT a.*, au.firstname, au.lastname, c.name AS category
                     FROM articles a 
@@ -37,14 +38,14 @@
                 ');
             $reqArticles->execute([]);
             return $reqArticles->fetchAll();
-        }
+         }
 
         /**
          * Sends all articles.
          * @return array
          */
-        public function getAllArticles()
-        {
+         public function getAllArticles()
+         {
             $reqArticles = $this->conn->prepare('
                 SELECT a.*, au.firstname, au.lastname, c.name AS category
                 FROM articles a 
@@ -54,15 +55,15 @@
             ');
             $reqArticles->execute([]);
             return $reqArticles->fetchAll();
-        }
+         }
 
 
         /**
          * Creates a new article thanks to the admin posts section.
          * @return datas to the DB
          */
-        public function createArticles()
-        {
+         public function createArticles()
+         {
             if (isset($_POST['create_post'])){
 
                 $post_title = str_secur($_POST['title']);
@@ -84,14 +85,14 @@
                 $reqArticles->execute();
                 header("Location: admin_posts");
             }
-        }
+         }
 
         /**
          * Deletes an article thanks to the admin posts section.
          * @return datas to the DB
          */
-        public function deleteArticles()
-        {
+         public function deleteArticles()
+         {
             if (isset($_POST['delete'])){
                 $id = ($_POST['delete']);
                 $reqArticles = "
@@ -100,14 +101,14 @@
                 $this->conn->query($reqArticles);
                 header("Location: admin_posts");
             }
-        }
+         }
 
         /**
          * Fill an article in update page thanks to the ID in admin posts section.
          * @return datas to the DB
          */
-        public function fillArticles()
-        {
+         public function fillArticles()
+         {
             global $updateId;
             global $updateTitle;
             global $updateSentence;
@@ -127,14 +128,14 @@
                 $updateAuthor = $article_update['author_id'];
                 $updateCategory = $article_update['category_id'];
             }
-        }
+         }
 
         /**
          * Updates an article thanks to an ID. Go back to the posts page.
          * @return datas to the DB
          */
-        public function updateArticles()
-        {
+         public function updateArticles()
+         {
             if (isset($_POST['updated_post'])){
 
                 $updated_id = (int)(SecurityService::str_secur($_POST['u_id']));
@@ -158,5 +159,5 @@
                 $udArticles->execute();
                 header("Location: admin_posts");
             }
-        }
-    }
+         }
+     }

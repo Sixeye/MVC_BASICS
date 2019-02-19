@@ -1,6 +1,6 @@
 <?php
 
-    require('app/models/repository/ArticleRepository.php');
+    require_once('app/models/repository/ArticleRepository.php');
 
     $articleLast = new ArticleRepository();
     $allArticles = $articleLast->getLastArticles();

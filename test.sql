@@ -2,35 +2,26 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le :  jeu. 17 jan. 2019 à 22:31
--- Version du serveur :  10.1.36-MariaDB
--- Version de PHP :  7.0.32
+-- Hôte : localhost:8889
+-- Généré le :  mar. 19 fév. 2019 à 18:28
+-- Version du serveur :  5.7.23
+-- Version de PHP :  7.2.10
 
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de données :  `test`
 --
-CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE test;
 
 DELIMITER $$
 --
 -- Procédures
 --
-CREATE DEFINER=`` PROCEDURE `AddGeometryColumn` (`catalog` VARCHAR(64), `t_schema` VARCHAR(64), `t_name` VARCHAR(64), `geometry_column` VARCHAR(64), `t_srid` INT)  begin
+CREATE DEFINER=``@`%` PROCEDURE `AddGeometryColumn` (`catalog` VARCHAR(64), `t_schema` VARCHAR(64), `t_name` VARCHAR(64), `geometry_column` VARCHAR(64), `t_srid` INT)  begin
   set @qwe= concat('ALTER TABLE ', t_schema, '.', t_name, ' ADD ', geometry_column,' GEOMETRY REF_SYSTEM_ID=', t_srid); PREPARE ls from @qwe; execute ls; deallocate prepare ls; end$$
 
-CREATE DEFINER=`` PROCEDURE `DropGeometryColumn` (`catalog` VARCHAR(64), `t_schema` VARCHAR(64), `t_name` VARCHAR(64), `geometry_column` VARCHAR(64))  begin
+CREATE DEFINER=``@`%` PROCEDURE `DropGeometryColumn` (`catalog` VARCHAR(64), `t_schema` VARCHAR(64), `t_name` VARCHAR(64), `geometry_column` VARCHAR(64))  begin
   set @qwe= concat('ALTER TABLE ', t_schema, '.', t_name, ' DROP ', geometry_column); PREPARE ls from @qwe; execute ls; deallocate prepare ls; end$$
 
 DELIMITER ;
@@ -46,10 +37,10 @@ CREATE TABLE `actualites` (
   `title` varchar(255) NOT NULL,
   `sentence` varchar(255) NOT NULL,
   `content` mediumtext NOT NULL,
-  `date` datetime,
+  `date` datetime DEFAULT NULL,
   `author_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `actualites`
@@ -72,11 +63,11 @@ CREATE TABLE `articles` (
   `title` varchar(255) NOT NULL,
   `sentence` varchar(255) NOT NULL,
   `content` mediumtext NOT NULL,
-  `date` datetime,
+  `date` datetime DEFAULT NULL,
   `author_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   `Acommentaires` varchar(255) DEFAULT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `articles`
@@ -102,15 +93,15 @@ CREATE TABLE `authors` (
   `password` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `secret` text
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `authors`
 --
 
 INSERT INTO `authors` (`id`, `firstname`, `lastname`, `password`, `email`, `secret`) VALUES
-(1, 'Jean', 'Forteroche', 'jf74094d43910033275e6d69a9ff05abe731ce623131', 'srinath@srinath.fr', '4bc33f81ef781282d8f9709b2a0482ff3f39600f'),
-(2, 'Anna', 'Desnos - Agent Littéraire', 'jffca0b7451ef0ce2fdb2741685e30cfe38187227c31', 'veejayseye@gmail.com', 'b42b33ace6f4a32d9db8d0d82b1f91b8e9e02951');
+(1, 'Jean', 'Forteroche', 'jf74094d43910033275e6d69a9ff05abe731ce623131', 'srinath@srinath.fr', '247720bff8b2155d891925009b0bb29fe022024a'),
+(2, 'Anna', 'Desnos - Agent Littéraire', 'ActualiteAnnaDesnos', 'veejayseye@gmail.com', 'b42b33ace6f4a32d9db8d0d82b1f91b8e9e02951');
 
 -- --------------------------------------------------------
 
@@ -121,7 +112,7 @@ INSERT INTO `authors` (`id`, `firstname`, `lastname`, `password`, `email`, `secr
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `categories`
@@ -140,26 +131,23 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 CREATE TABLE `commentaires` (
   `id` int(11) NOT NULL,
   `content` text NOT NULL,
-  `date` datetime,
+  `date` datetime DEFAULT NULL,
   `nom` varchar(255) NOT NULL,
   `article_id` int(11) NOT NULL,
   `approved` tinyint(1) DEFAULT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `commentaires`
 --
 
 INSERT INTO `commentaires` (`id`, `content`, `date`, `nom`, `article_id`, `approved`) VALUES
-(1, 'Fantastique!', '2019-01-08 14:42:49', 'Joker', 0, 1),
-(3, 'Ca marche je crois.', '2019-01-08 14:44:50', 'Jobs Steve', 0, 1),
-(4, 'Bon que pouvez-vous faire d\'autre?', '2019-01-08 14:45:12', 'Jack Bauer', 103, 1),
-(55, 'Un commentaire ici pour tester l\'id.', '2019-01-10 14:37:32', 'Chris', 75, 1),
 (56, 'Joli pas pour la femme.', '2019-01-13 14:32:32', 'Simone de Beauvoir', 2, 1),
 (57, 'C\'est beau l\'enfance!', '2019-01-13 14:35:50', 'Tom Sawyer', 1, 0),
 (62, 'Le boson de Higgs, la particule de Dieu!\r\nBelle introduction.\r\nMerci pour votre travail remarquable.', '2019-01-13 23:44:58', 'Hugh Everett', 5, 1),
 (63, 'J\'aime le silence dans vos histoires.', '2019-01-14 00:02:45', 'Emmanuelle Devos', 4, 1),
-(64, 'J\'aime Trump et je ne vois pas pourquoi on le mélange à toutes les sauces.\r\nC\'est une personne élue, il faut la respecter.', '2019-01-14 00:12:04', 'MLP', 3, 1);
+(64, 'J\'aime Trump et je ne vois pas pourquoi on le mélange à toutes les sauces.\r\nC\'est une personne élue, il faut la respecter.', '2019-01-14 00:12:04', 'MLP', 3, 1),
+(78, 'TADATADA', '2019-02-19 10:38:39', 'FISH and F1SH', 5, 0);
 
 -- --------------------------------------------------------
 
@@ -173,8 +161,8 @@ CREATE TABLE `messages` (
   `email` varchar(255) NOT NULL,
   `telephone` varchar(255) NOT NULL,
   `content` text NOT NULL,
-  `date` datetime
-) ;
+  `date` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `messages`
@@ -235,39 +223,34 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT pour la table `actualites`
 --
 ALTER TABLE `actualites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
