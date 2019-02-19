@@ -1,10 +1,12 @@
 <?php
 
-    include_once 'app/models/Database.php';
+    use entity\Actualite;
 
-    include_once 'app/models/Actualites.php';
+    require_once('app/models/entity/Actualite.php');
+    require_once('app/models/repository/ActualiteRepository.php');
 
-    $allActualites = Actualites::getAllActualites();
+    $actualiteAll  = new ActualiteRepository();
+    $allActualites = $actualiteAll->getAllActualites();
 
     ob_start();
     include_once 'app/views/actualites_view.php';

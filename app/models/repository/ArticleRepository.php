@@ -8,7 +8,7 @@
      * Date: 2019-02-16
      * Time: 15:17
      */
-    class ArticlesRepository
+    class ArticleRepository
     {
         private $conn;
         public $id;

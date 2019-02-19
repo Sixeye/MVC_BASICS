@@ -9,7 +9,7 @@
     require_once('app/models/repository/CommentRepository.php');
 
 
-    $articleChap  = new ArticlesRepository();
+    $articleChap  = new ArticleRepository();
     $articles = $articleChap->getAllArticles();
 
 

@@ -4,7 +4,7 @@
 
     ob_start();
 
-    $articleRep = new ArticlesRepository();
+    $articleRep = new ArticleRepository();
     $allArticles = $articleRep->getLastArticles();
 
     include_once 'app/views/home_view.php';

@@ -20,7 +20,7 @@
 
         public function __construct($data = [])
         {
-            if (!empty($data)) // If data were declared, hydrate the object.
+            if (!empty($data)) // If data are declared, hydrate the object.
             {
                 $this->hydrate($data);
             }

@@ -45,7 +45,7 @@
                                 </p>
 
                                 <br>
-                                <p class="post-meta">Posté par&nbsp;
+                                <p class="post-meta"> Posté par&nbsp;
                                     <p>
                                         <?= $comment['nom'] ?> &nbsp;
                                         <?= date_format(date_create($comment['date']), "d.m.Y H:i:s" ) ?>
