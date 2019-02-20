@@ -99,27 +99,23 @@
          * Fill an article in update page thanks to the ID in admin posts section.
          * @return datas to the DB
          */
-         public function fillArticles()
+         public function fillArticles($idUp)
          {
-            global $updateId;
-            global $updateTitle;
-            global $updateSentence;
-            global $updateContent;
-            global $updateAuthor;
-            global $updateCategory;
-
-            if (isset($_POST['update'])){
-                $id = (int)($_POST['update']);
-                $reqArticles = $this->conn->prepare("SELECT * FROM articles WHERE id = $id");
+             DebuggerService::debug($idUp);
+                $reqArticles = $this->conn->prepare("SELECT * FROM articles WHERE id = :idUp");
+                $reqArticles->bindParam(':idUp', $idUp, PDO::PARAM_INT);
                 $reqArticles->execute();
-                $article_update = $reqArticles->fetch(PDO::FETCH_ASSOC);
+                //$reqArticles->execute([]);
+
+                $data = $reqArticles->fetch();
+                $article_update = new Article($data);
+                return $article_update;
                 $updateId = $article_update['id'];
                 $updateTitle = $article_update['title'];
                 $updateSentence = $article_update['sentence'];
                 $updateContent = $article_update['content'];
                 $updateAuthor = $article_update['author_id'];
                 $updateCategory = $article_update['category_id'];
-            }
          }
 
         /**

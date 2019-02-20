@@ -38,12 +38,13 @@
     if (isset($_POST['delete']))
     {
         $post_id = ($_POST['delete']);
-        $ArticleDeleted = new Article();
-        $ArticleDeleted->setId($post_id);
+        $articleDeleted = new Article();
+        $articleDeleted->setId($post_id);
 
         $deleteArticle = new ArticleRepository();
         $articleDelete = $deleteArticle->deleteArticles($ArticleDeleted);
     }
+
 
 
     //$allArticles      = Articles::getAllArticles();
