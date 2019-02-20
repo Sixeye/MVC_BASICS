@@ -86,11 +86,13 @@
          {
                 $reqArticles = $this->conn->prepare('DELETE FROM articles WHERE id = :post_id LIMIT 1');
                 $reqArticles->bindValue(':post_id', $post_id->getId(), PDO::PARAM_INT);
-
                 $reqArticles->execute();
-                header("Location: admin_posts");
 
-                //////////////DELETE RELATED COMMENT ALSO
+                $comRequests = $this->conn->prepare('DELETE FROM commentaires WHERE article_id = :post_id');
+                $comRequests->bindValue(':post_id', $post_id->getId(), PDO::PARAM_INT);
+                $comRequests->execute();
+
+                header("Location: admin_posts");
          }
 
         /**
