@@ -11,8 +11,8 @@
         /**
          * DB connexion with PDO
          */
-        public static function getConnection()
-        {
+         public static function getConnection()
+         {
             $parameters = [
                 'host'   => DATABASE_HOST,
                 'dbname' => DATABASE_NAME,
@@ -21,6 +21,7 @@
             ];
 
             if(self::$conn === null)
+
             try {
                 $conn = new PDO('mysql:host=' . $parameters['host'] . ';dbname=' . $parameters['dbname'] . ';charset=utf8', $parameters['user'], $parameters['pass']);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -30,6 +31,5 @@
                 $error = $e->getMessage();
                 echo ('Une erreur est survenue ! ' . $error);
             }
-        }
-
+         }
     }

@@ -28,8 +28,8 @@
         $Comment->setDate($date);
         $Comment->setApproved($approved);
 
-        $createComment = new CommentRepository();
-        $commentCreate = $createComment->createComment($Comment);
+        $createdComment = new CommentRepository();
+        $commentCreate = $createdComment->createComment($Comment);
         echo $post_nom. ', nous vous remercions pour votre commentaire.';
     }
 

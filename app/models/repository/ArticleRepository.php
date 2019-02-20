@@ -62,45 +62,35 @@
          * Creates a new article thanks to the admin posts section.
          * @return datas to the DB
          */
-         public function createArticles()
+         public function createArticles(Article $ArticleCreated)
          {
-            if (isset($_POST['create_post'])){
+                $reqArticles = $this->conn->prepare('INSERT INTO articles(title, sentence, content, date, author_id, category_id) VALUES(:post_title, :post_sentence, :post_content, :date, :post_author_id, :post_category_id)');
 
-                $post_title = str_secur($_POST['title']);
-                $post_sentence = str_secur($_POST['sentence']);
-                $post_content = $_POST['content'];
-                $post_author_id = str_secur($_POST['author_id']);
-                $post_category_id = str_secur($_POST['category_id']);
-                $date = (now);
-
-                $reqArticles = $this->conn->prepare('INSERT INTO articles(title, sentence, content, date, author_id, category_id) VALUES(?, ?, ?, ?, ?, ?)');
-
-                $reqArticles->bindParam('1', $post_title);
-                $reqArticles->bindParam('2', $post_sentence);
-                $reqArticles->bindParam('3', $post_content);
-                $reqArticles->bindParam('4', (date('Y-m-d H:i:s')));
-                $reqArticles->bindParam('5', $post_author_id);
-                $reqArticles->bindParam('6', $post_category_id);
+                $reqArticles->bindValue(':post_title', $ArticleCreated->getTitle(), PDO::PARAM_STR);
+                $reqArticles->bindValue(':post_sentence', $ArticleCreated->getSentence(), PDO::PARAM_STR);
+                $reqArticles->bindValue(':post_content', $ArticleCreated->getContent(), PDO::PARAM_STR);
+                $reqArticles->bindValue(':date', $ArticleCreated->getDate());
+                $reqArticles->bindValue(':post_author_id', $ArticleCreated->getAuthor(), PDO::PARAM_INT);
+                $reqArticles->bindValue(':post_category_id', $ArticleCreated->getCategory(), PDO::PARAM_INT);
 
                 $reqArticles->execute();
                 header("Location: admin_posts");
-            }
          }
+
 
         /**
          * Deletes an article thanks to the admin posts section.
          * @return datas to the DB
          */
-         public function deleteArticles()
+         public function deleteArticles(Article $post_id)
          {
-            if (isset($_POST['delete'])){
-                $id = ($_POST['delete']);
-                $reqArticles = "
-                DELETE FROM articles WHERE id= $id LIMIT 1
-                ";
-                $this->conn->query($reqArticles);
+                $reqArticles = $this->conn->prepare('DELETE FROM articles WHERE id = :post_id LIMIT 1');
+                $reqArticles->bindValue(':post_id', $post_id->getId(), PDO::PARAM_INT);
+
+                $reqArticles->execute();
                 header("Location: admin_posts");
-            }
+
+                //////////////DELETE RELATED COMMENT ALSO
          }
 
         /**

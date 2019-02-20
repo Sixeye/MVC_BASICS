@@ -9,8 +9,6 @@
      use entity\Author;
      include_once ('app/models/Database.php');
 
-     function test(){echo ('That ThING');};
-
      class AuthorRepository
      {
          private $conn;
@@ -106,7 +104,8 @@
 
          static function login()
          {
-             if (isset($_SESSION['id']) && isset($_SESSION['secret'])) {
+             if (isset($_SESSION['id']) && isset($_SESSION['secret']))
+             {
                  $id = $_SESSION['id'];
                  $secret = $_SESSION['secret'];
 
@@ -122,7 +121,8 @@
 
          static function loginGate()
          {
-             if (isset($_SESSION['id']) && isset($_SESSION['secret'])) {
+             if (isset($_SESSION['id']) && isset($_SESSION['secret']))
+             {
                  $id = $_SESSION['id'];
                  $secret = $_SESSION['secret'];
 
