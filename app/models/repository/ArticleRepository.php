@@ -12,7 +12,6 @@
      class ArticleRepository
      {
         private $conn;
-        public $id;
 
         /**
          * ArticlesRepository constructor.
@@ -24,7 +23,7 @@
 
         /**
          * Sends two last articles.
-         * @return array
+         * return an array of the two last articles
          */
          public function getLastArticles()
          {
@@ -42,7 +41,7 @@
 
         /**
          * Sends all articles.
-         * @return array
+         * return an array from the DB
          */
          public function getAllArticles()
          {
@@ -60,7 +59,7 @@
 
         /**
          * Creates a new article thanks to the admin posts section.
-         * @return datas to the DB
+         * return datas to the DB
          */
          public function createArticles(Article $ArticleCreated)
          {
@@ -80,16 +79,16 @@
 
         /**
          * Deletes an article thanks to the admin posts section.
-         * @return datas to the DB
+         * retrieve datas from the DB
          */
-         public function deleteArticles(Article $post_id)
+         public function deleteArticle($post_id)
          {
-                $reqArticles = $this->conn->prepare('DELETE FROM articles WHERE id = :post_id LIMIT 1');
-                $reqArticles->bindValue(':post_id', $post_id->getId(), PDO::PARAM_INT);
+                $reqArticles = $this->conn->prepare('DELETE FROM articles WHERE id = :post_id');
+                $reqArticles->bindValue(':post_id', $post_id, PDO::PARAM_INT);
                 $reqArticles->execute();
 
                 $comRequests = $this->conn->prepare('DELETE FROM commentaires WHERE article_id = :post_id');
-                $comRequests->bindValue(':post_id', $post_id->getId(), PDO::PARAM_INT);
+                $comRequests->bindValue(':post_id', $post_id, PDO::PARAM_INT);
                 $comRequests->execute();
 
                 header("Location: admin_posts");
@@ -97,55 +96,35 @@
 
         /**
          * Fill an article in update page thanks to the ID in admin posts section.
-         * @return datas to the DB
+         * return datas from the DB
          */
-         public function fillArticles($idUp)
+         public function fillArticle(Article $idUp)
          {
-             DebuggerService::debug($idUp);
-                $reqArticles = $this->conn->prepare("SELECT * FROM articles WHERE id = :idUp");
-                $reqArticles->bindParam(':idUp', $idUp, PDO::PARAM_INT);
-                $reqArticles->execute();
-                //$reqArticles->execute([]);
+                $reqArticle = $this->conn->prepare("SELECT * FROM articles WHERE id = :idUp");
+                $reqArticle->bindParam(':idUp', $idUp->getId(), PDO::PARAM_INT);
+                $reqArticle->execute();
 
-                $data = $reqArticles->fetch();
-                $article_update = new Article($data);
-                return $article_update;
-                $updateId = $article_update['id'];
-                $updateTitle = $article_update['title'];
-                $updateSentence = $article_update['sentence'];
-                $updateContent = $article_update['content'];
-                $updateAuthor = $article_update['author_id'];
-                $updateCategory = $article_update['category_id'];
+                $articleFill = $reqArticle->fetch();
+                return $articleFill;
          }
+
 
         /**
          * Updates an article thanks to an ID. Go back to the posts page.
-         * @return datas to the DB
+         * return datas to the DB
          */
-         public function updateArticles()
+         public function updateArticle(Article $updatedArticle)
          {
-            if (isset($_POST['updated_post'])){
+                $udArticles = $this->conn->prepare('UPDATE articles set title = :title, sentence = :sentence, content = :content, date = :date, author_id = :author_id WHERE id = :id');
 
-                $updated_id = (int)(SecurityService::str_secur($_POST['u_id']));
-                $updated_title = SecurityService::str_secur($_POST['u_title']);
-                $updated_sentence = SecurityService::str_secur($_POST['u_sentence']);
-                $updated_content = $_POST['u_content'];
-                $updated_author_id = SecurityService::str_secur($_POST['u_author_id']);
-                $updated_category_id = SecurityService::str_secur($_POST['u_category_id']);
-                $date = (now);
-
-                $udArticles = $this->conn->prepare('UPDATE articles set title = ?, sentence = ?, content = ?, date = ?, author_id = ?, category_id = ? WHERE id = ?');
-
-                $udArticles->bindValue('1', $updated_title, PDO::PARAM_STR);
-                $udArticles->bindValue('2', $updated_sentence, PDO::PARAM_STR);
-                $udArticles->bindValue('3', $updated_content, PDO::PARAM_STR);
-                $udArticles->bindValue('4', (date('Y-m-d H:i:s')));
-                $udArticles->bindValue('5', $updated_author_id, PDO::PARAM_INT);
-                $udArticles->bindValue('6', $updated_category_id, PDO::PARAM_INT);
-                $udArticles->bindValue('7', $updated_id, PDO::PARAM_INT);
+                $udArticles->bindValue(':title', $updatedArticle->getTitle(), PDO::PARAM_STR);
+                $udArticles->bindValue(':sentence', $updatedArticle->getSentence(), PDO::PARAM_STR);
+                $udArticles->bindValue(':content', $updatedArticle->getContent(), PDO::PARAM_STR);
+                $udArticles->bindValue(':date', $updatedArticle->getDate());
+                $udArticles->bindValue(':author_id', $updatedArticle->getAuthor(), PDO::PARAM_INT);
+                $udArticles->bindValue(':id', $updatedArticle->getId(), PDO::PARAM_INT);
 
                 $udArticles->execute();
                 header("Location: admin_posts");
-            }
          }
      }

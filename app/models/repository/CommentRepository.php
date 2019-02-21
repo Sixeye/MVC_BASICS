@@ -58,11 +58,11 @@
          * Shows all reported comments.
          * @return array
          */
-        public function getReportedComments()
+        public function getReportedComment()
         {
-            $reqComments = $this->conn->prepare('SELECT * FROM commentaires WHERE approved = 0 ORDER BY id DESC');
-            $reqComments->execute([]);
-            return $reqComments->fetchAll();
+            $reqComment = $this->conn->prepare('SELECT * FROM commentaires WHERE approved = 0 ORDER BY id DESC');
+            $reqComment->execute([]);
+            return $reqComment->fetchAll();
         }
 
 
