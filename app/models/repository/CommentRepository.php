@@ -14,7 +14,6 @@
             $this->conn = Database::getConnection();
         }
 
-
         public function createComment(Comment $Comment)
         {
                 $reqComments = $this->conn->prepare('INSERT INTO commentaires(content, nom, article_id, date, approved) VALUES(:post_content, :post_nom, :post_articleId, :date, :approved)');
@@ -70,34 +69,25 @@
          * Deletes a reported comment in the admin section.
          * @return datas to the DB
          */
-        public function deleteComment()
+        public function deleteComment($id)
         {
-            if (isset($_POST['commentDelete'])) {
-                $id = ($_POST['commentDelete']);
-                $reqComment = "
-                DELETE FROM commentaires WHERE id= $id LIMIT 1
-                ";
-                $this->conn->query($reqComment);
-                header("Location: admin_comments");
-                echo 'Le commentaire a été supprimé.';
-            }
+            $reqComment = $this->conn->prepare('DELETE FROM commentaires WHERE id= :id LIMIT 1');
+            $reqComment->bindValue(':id', $id, PDO::PARAM_INT);
+            $reqComment->execute();
+            header("Location: admin_comments");
         }
 
         /**
          * Validate a reported comment, status from false to true (0 to 1).
          * @return array
          */
-        public function validateComment()
+        public function validateComment($id)
         {
-            if (isset($_POST['commentValidate'])) {
-                $id = ($_POST['commentValidate']);
-                $reqComment = "
-                UPDATE commentaires SET approved = 1 WHERE id= $id LIMIT 1
-                ";
-                $this->conn->query($reqComment);
-                header("Location: admin_comments");
-                echo 'Le commentaire a été validé.';
-            }
+            $reqComment = $this->conn->prepare('UPDATE commentaires SET approved = 1 WHERE id= :id LIMIT 1');
+            $reqComment->bindValue(':id', $id, PDO::PARAM_INT);
+            $reqComment->execute();
+
+            header("Location: admin_comments");
         }
     }
 
