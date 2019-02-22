@@ -30,13 +30,13 @@
         $ArticleCreated->setCategory($post_category_id);
         $ArticleCreated->setDate($date);
 
-    $createArticle = new ArticleRepository();
-    $articleCreate = $createArticle->createArticles($ArticleCreated);
+        $createArticle = new ArticleRepository();
+        $articleCreate = $createArticle->createArticles($ArticleCreated);
     }
 
     if (isset($_POST['delete']))
     {
-        $post_id = $_POST['delete'];;
+        $post_id = $_POST['delete'];
 
         $deleteArticle = new ArticleRepository();
         $articleDelete = $deleteArticle->deleteArticle($post_id);

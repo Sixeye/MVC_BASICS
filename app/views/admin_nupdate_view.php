@@ -70,22 +70,22 @@
                                     <div class="form-group">
 
                                         <label for="id">ID</label>
-                                        <input value="<?= $nupdateId; ?>" type="text" class="form-control" name="nu_id" required>
+                                        <input value="<?= $actualiteFill['id']; ?>" type="text" class="form-control" name="nu_id" required>
 
                                         <label for="title">TITRE</label>
-                                        <input value="<?= $nupdateTitle; ?>" type="text" class="form-control" name="nu_title" required>
+                                        <input value="<?= $actualiteFill['title']; ?>" type="text" class="form-control" name="nu_title" required>
 
                                         <label for="sentence">PHRASE</label>
-                                        <input value="<?= $nupdateSentence ?>" type="text" class="form-control" name="nu_sentence" required>
+                                        <input value="<?= $actualiteFill['sentence'] ?>" type="text" class="form-control" name="nu_sentence" required>
 
                                         <label for="content">CONTENU</label>
-                                        <input value="<?= $nupdateContent ?>" type="text" class="form-control" name="nu_content" id="content" required>
+                                        <input value="<?= $actualiteFill['content'] ?>" type="text" class="form-control" name="nu_content" id="content" required>
 
                                         <label for="author_id">N° AUTEUR</label>
-                                        <input value="<?= $nupdateAuthor ?>" type="text" class="form-control" name="nu_author_id" value="2" required>
+                                        <input value="<?= $actualiteFill['author_id'] ?>" type="text" class="form-control" name="nu_author_id" value="2" required>
 
                                         <label for="category_id">N°CATEGORIE</label>
-                                        <input value="<?= $nupdateCategory ?>" type="text" class="form-control" name="nu_category_id" value="2" required>
+                                        <input value="<?= $actualiteFill['category_id'] ?>" type="text" class="form-control" name="nu_category_id" value="2" required>
 
                                         <div class="form-group"><input type="submit" class="btn btn-primary" name="nUpdated_post" value="PUBLIER" required>
                                         </div>

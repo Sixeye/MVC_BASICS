@@ -83,13 +83,13 @@
          */
          public function deleteArticle($post_id)
          {
-                $reqArticles = $this->conn->prepare('DELETE FROM articles WHERE id = :post_id');
-                $reqArticles->bindValue(':post_id', $post_id, PDO::PARAM_INT);
-                $reqArticles->execute();
+                $reqArticle = $this->conn->prepare('DELETE FROM articles WHERE id = :post_id');
+                $reqArticle->bindValue(':post_id', $post_id, PDO::PARAM_INT);
+                $reqArticle->execute();
 
-                $comRequests = $this->conn->prepare('DELETE FROM commentaires WHERE article_id = :post_id');
-                $comRequests->bindValue(':post_id', $post_id, PDO::PARAM_INT);
-                $comRequests->execute();
+                $comRequest = $this->conn->prepare('DELETE FROM commentaires WHERE article_id = :post_id');
+                $comRequest->bindValue(':post_id', $post_id, PDO::PARAM_INT);
+                $comRequest->execute();
 
                 header("Location: admin_posts");
          }

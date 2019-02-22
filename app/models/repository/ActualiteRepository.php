@@ -1,13 +1,14 @@
 <?php
-    require ('app/models/Database.php');
-    use entity\Article;
+     /**
+      * Created by PhpStorm.
+      * User: srinathchristophersamarasinghe
+      * Date: 2019-02-19
+      * Time: 08:46
+      */
 
-    /**
-     * Created by PhpStorm.
-     * User: srinathchristophersamarasinghe
-     * Date: 2019-02-19
-     * Time: 08:46
-     */
+    include_once ('app/models/Database.php');
+    use entity\Actualite;
+
      class ActualiteRepository
      {
          private $conn;
@@ -38,104 +39,66 @@
           * Creates a news thanks to the admin news section.
           * @return datas to the DB
           */
-         public function createActualites()
+         public function createActualite(Actualite $actualiteCreated)
          {
-             if (isset($_POST['create_news']))
-             {
-                 $post_title       = SecurityService::str_secur($_POST['ntitle']);
-                 $post_sentence    = SecurityService::str_secur($_POST['nsentence']);
-                 $post_content     = SecurityService::$_POST['content'];
-                 $post_author_id   = SecurityService::str_secur($_POST['nauthor_id']);
-                 $post_category_id = SecurityService::str_secur($_POST['ncategory_id']);
-                 $date = (now);
+                 $reqActualite = $this->conn->prepare('INSERT INTO actualites(title, sentence, content, date, author_id, category_id) VALUES(:post_title, :post_sentence, :post_content, :date, :post_author_id, :post_category_id)');
 
-                 $reqActualites = $this->conn->prepare('INSERT INTO actualites(title, sentence, content, date, author_id, category_id) VALUES(?, ?, ?, ?, ?, ?)');
+                 $reqActualite->bindParam(':post_title', $actualiteCreated->getTitle(), PDO::PARAM_STR);
+                 $reqActualite->bindParam(':post_sentence', $actualiteCreated->getSentence(), PDO::PARAM_STR);
+                 $reqActualite->bindParam(':post_content', $actualiteCreated->getContent(), PDO::PARAM_STR);
+                 $reqActualite->bindParam(':date', $actualiteCreated->getDate());
+                 $reqActualite->bindParam(':post_author_id', $actualiteCreated->getAuthor(), PDO::PARAM_INT);
+                 $reqActualite->bindParam(':post_category_id', $actualiteCreated->getCategory(), PDO::PARAM_INT);
 
-                 $reqActualites->bindParam('1', $post_title);
-                 $reqActualites->bindParam('2', $post_sentence);
-                 $reqActualites->bindParam('3', $post_content);
-                 $reqActualites->bindParam('4', (date('Y-m-d H:i:s')));
-                 $reqActualites->bindParam('5', $post_author_id);
-                 $reqActualites->bindParam('6', $post_category_id);
-
-                 $reqActualites->execute();
+                 $reqActualite->execute();
                  header("Location: admin_news");
-             }
          }
 
          /**
           * Deletes a news thanks to the admin news section.
           * @return datas to the DB
           */
-         public function deleteActualites()
+         public function deleteActualite($post_id)
          {
-             if (isset($_POST['n_delete']))
-             {
-                 $id = ($_POST['n_delete']);
-                 $reqActualites = "
-                DELETE FROM actualites WHERE id= $id LIMIT 1
-                ";
-                 $this->conn->query($reqActualites);
-                 header("Location: admin_news");
-             }
+             $reqActualite = $this->conn->prepare('DELETE FROM actualites WHERE id = :post_id');
+             $reqActualite->bindValue(':post_id', $post_id, PDO::PARAM_INT);
+             $reqActualite->execute();
+
+             header("Location: admin_news");
          }
 
          /**
           * Fill an news in update page thanks to the ID in admin news section.
           * @return datas to the DB
           */
-         public function fillActualites()
+         public function fillActualite(Actualite $idUp)
          {
-             global $nupdateId;
-             global $nupdateTitle;
-             global $nupdateSentence;
-             global $nupdateContent;
-             global $nupdateAuthor;
-             global $nupdateCategory;
+                 $reqActualite = $this->conn->prepare("SELECT * FROM actualites WHERE id = :idUp");
+                 $reqActualite->bindParam(':idUp', $idUp->getId(), PDO::PARAM_INT);
+                 $reqActualite->execute();
 
-             if (isset($_POST['nupdate']))
-             {
-                 $id = (int)($_POST['nupdate']);
-                 $reqActualites = $this->conn->prepare("SELECT * FROM actualites WHERE id = $id");
-                 $reqActualites->execute();
-                 $actualite_update = $reqActualites->fetch(PDO::FETCH_ASSOC);
-                 $nupdateId        = $actualite_update['id'];
-                 $nupdateTitle     = $actualite_update['title'];
-                 $nupdateSentence  = $actualite_update['sentence'];
-                 $nupdateContent   = $actualite_update['content'];
-                 $nupdateAuthor    = $actualite_update['author_id'];
-                 $nupdateCategory  = $actualite_update['category_id'];
-             }
+                 $actualiteFill = $reqActualite->fetch();
+                 return $actualiteFill;
+
          }
 
          /**
           * Updates an news thanks to an ID. Go back to the posts page.
           * @return datas to the DB
           */
-         public function updateActualites()
+         public function updateActualite(Actualite $nupdateActualite)
          {
-             if (isset($_POST['nUpdated_post']))
-             {
-                 $nupdated_id = (int)(SecurityService::str_secur($_POST['nu_id']));
-                 $nupdated_title = SecurityService::str_secur($_POST['nu_title']);
-                 $nupdated_sentence = SecurityService::str_secur($_POST['nu_sentence']);
-                 $nupdated_content = $_POST['nu_content'];
-                 $nupdated_author_id = (int)(SecurityService::str_secur($_POST['nu_author_id']));
-                 $nupdated_category_id = (int)(SecurityService::str_secur($_POST['nu_category_id']));
-                 $date = (now);
+                 $udActualite = $this->conn->prepare('UPDATE actualites set title = :title, sentence = :sentence, content = :content, date = :date, author_id = :author, category_id = :category WHERE id = :id');
 
-                 $udActualites = $this->conn->prepare('UPDATE actualites set title = ?, sentence = ?, content = ?, date = ?, author_id = ?, category_id = ? WHERE id = ?');
+                 $udActualite->bindValue(':title', $nupdateActualite->getTitle(), PDO::PARAM_STR);
+                 $udActualite->bindValue(':sentence', $nupdateActualite->getSentence(), PDO::PARAM_STR);
+                 $udActualite->bindValue(':content', $nupdateActualite->getContent(), PDO::PARAM_STR);
+                 $udActualite->bindValue(':date', $nupdateActualite->getDate());
+                 $udActualite->bindValue(':author', $nupdateActualite->getAuthor(), PDO::PARAM_INT);
+                 $udActualite->bindValue('category', $nupdateActualite->getCategory(), PDO::PARAM_INT);
+                 $udActualite->bindValue(':id', $nupdateActualite->getId(), PDO::PARAM_INT);
 
-                 $udActualites->bindValue('1', $nupdated_title, PDO::PARAM_STR);
-                 $udActualites->bindValue('2', $nupdated_sentence, PDO::PARAM_STR);
-                 $udActualites->bindValue('3', $nupdated_content, PDO::PARAM_STR);
-                 $udActualites->bindValue('4', (date('Y-m-d H:i:s')));
-                 $udActualites->bindValue('5', $nupdated_author_id, PDO::PARAM_INT);
-                 $udActualites->bindValue('6', $nupdated_category_id, PDO::PARAM_INT);
-                 $udActualites->bindValue('7', $nupdated_id, PDO::PARAM_INT);
-
-                 $udActualites->execute();
+                 $udActualite->execute();
                  header("Location: admin_news");
-             }
          }
      }
