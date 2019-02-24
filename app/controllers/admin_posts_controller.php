@@ -22,16 +22,16 @@
         $date = new \DateTime();
         $date = $date->format('Y-m-d H:i:s');
 
-        $ArticleCreated = new Article();
-        $ArticleCreated->setTitle($post_title);
-        $ArticleCreated->setSentence($post_sentence);
-        $ArticleCreated->setContent($post_content);
-        $ArticleCreated->setAuthor($post_author_id);
-        $ArticleCreated->setCategory($post_category_id);
-        $ArticleCreated->setDate($date);
+        $articleCreated = new Article();
+        $articleCreated->setTitle($post_title);
+        $articleCreated->setSentence($post_sentence);
+        $articleCreated->setContent($post_content);
+        $articleCreated->setAuthor($post_author_id);
+        $articleCreated->setCategory($post_category_id);
+        $articleCreated->setDate($date);
 
         $createArticle = new ArticleRepository();
-        $articleCreate = $createArticle->createArticles($ArticleCreated);
+        $articleCreate = $createArticle->createArticles($articleCreated);
     }
 
     if (isset($_POST['delete']))

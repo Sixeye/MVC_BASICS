@@ -74,7 +74,7 @@
                                     </thead>
                                     <tbody>
 
-                                        <?php foreach ($getAllMessages as $index => $message) : ?>
+                                        <?php foreach ($allMessages as $index => $message) : ?>
 
                                         <tr>
                                             <td>
