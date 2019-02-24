@@ -2,10 +2,10 @@
 
     use entity\Article;
 
-    require ('app/models/repository/AuthorRepository.php');
     require ('app/models/repository/ArticleRepository.php');
-    require ('app/models/entity/Article.php');
+    require ('app/models/repository/AuthorRepository.php');
     require ('app/models/entity/Author.php');
+    require ('app/models/entity/Article.php');
 
     AuthorRepository::login();
 

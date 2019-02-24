@@ -1,4 +1,5 @@
 <?php
+
     /**
      * Created by PhpStorm.
      * User: srinathchristophersamarasinghe
@@ -6,21 +7,13 @@
      * Time: 10:53
      */
 
-     include_once ('app/models/Database.php');
-     use entity\Message;
+    use entity\Message;
 
-    class MessageRepository
+    require ('AbstractRepository.php');
+
+
+    class MessageRepository extends AbstractRepository
     {
-        private $conn;
-
-        /**
-         * ArticlesRepository constructor.
-         */
-        public function __construct()
-        {
-            $this->conn = Database::getConnection();
-        }
-
         public function createMessage(Message $messageCreated)
         {
             $reqMessage = $this->conn->prepare('INSERT INTO messages(nom, email, telephone, content, date) VALUES( :post_nom, :post_email, :post_telephone, :post_content, :post_date)');

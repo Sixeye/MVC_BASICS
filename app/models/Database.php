@@ -6,7 +6,7 @@
     */
     class Database
     {
-        private static $conn;
+        private static $db;
 
         /**
          * DB connexion with PDO
@@ -20,12 +20,12 @@
                 'pass'   => DATABASE_PASSWORD
             ];
 
-            if(self::$conn === null)
+            if(self::$db === null)
 
             try {
-                $conn = new PDO('mysql:host=' . $parameters['host'] . ';dbname=' . $parameters['dbname'] . ';charset=utf8', $parameters['user'], $parameters['pass']);
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                return $conn;
+                $db = new PDO('mysql:host=' . $parameters['host'] . ';dbname=' . $parameters['dbname'] . ';charset=utf8', $parameters['user'], $parameters['pass']);
+                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                return $db;
             } catch (PDOException $e)
             {
                 $error = $e->getMessage();

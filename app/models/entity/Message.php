@@ -8,7 +8,9 @@
 
      namespace entity;
 
-     class message
+     require ('app/models/entity/AbstractEntity.php');
+
+     class message extends AbstractEntity
      {
         protected $nom;
         protected $email;
@@ -16,28 +18,6 @@
         protected $message;
         protected $date;
         protected $id;
-
-         public function __construct($data = [])
-         {
-             if (!empty($data)) // If data are declared, hydrate the object.
-             {
-                $this->hydrate($data);
-             }
-         }
-
-        // Hydrate
-         public function hydrate(array $data)
-         {
-            foreach ($data as $key => $value)
-            {
-                $method = 'set'.ucfirst($key);
-
-            if (method_exists($this, $method))
-            {
-                $this->$method($value);
-            }
-            }
-         }
 
          /**
           * @return mixed

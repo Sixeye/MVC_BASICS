@@ -6,22 +6,17 @@
       * Time: 08:46
       */
 
-    include_once ('app/models/Database.php');
     use entity\Actualite;
 
-     class ActualiteRepository
-     {
-         private $conn;
+    require ('AbstractRepository.php');
 
-         public function __construct()
-         {
-             $this->conn = Database::getConnection();
-         }
 
-         /**
-          * Sends all Actualites.
-          * @return array
-          */
+    class ActualiteRepository extends AbstractRepository
+    {
+        /**
+         * Sends all Actualites.
+         * @return array
+         */
          public function getAllActualites()
          {
              $reqActualites = $this->conn->prepare('

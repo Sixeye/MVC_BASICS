@@ -2,11 +2,10 @@
 
     use entity\Comment;
 
-    require_once('app/models/entity/Article.php');
-    require_once('app/models/entity/Comment.php');
-    require_once('app/models/repository/ArticleRepository.php');
-    require_once('app/models/repository/CommentRepository.php');
-
+    require ('app/models/entity/Article.php');
+    require ('app/models/entity/Comment.php');
+    require ('app/models/repository/ArticleRepository.php');
+    require ('app/models/repository/CommentRepository.php');
 
     $articleChap  = new ArticleRepository();
     $articles = $articleChap->getAllArticles();

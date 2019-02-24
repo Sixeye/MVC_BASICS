@@ -1,8 +1,8 @@
 <?php
     use entity\Author;
 
-    require('app/models/entity/Author.php');
-    require('app/models/repository/AuthorRepository.php');
+    require ('app/models/entity/Author.php');
+    require ('app/models/repository/AuthorRepository.php');
 
     AuthorRepository::loginGate();
 

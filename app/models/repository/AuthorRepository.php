@@ -7,6 +7,7 @@
       */
 
      use entity\Author;
+
      include_once ('app/models/Database.php');
 
      class AuthorRepository

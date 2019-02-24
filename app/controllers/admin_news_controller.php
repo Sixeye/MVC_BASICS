@@ -1,7 +1,7 @@
 <?php
     use entity\Actualite;
-    require ('app/models/repository/AuthorRepository.php');
     require ('app/models/repository/ActualiteRepository.php');
+    require ('app/models/repository/AuthorRepository.php');
     require ('app/models/entity/Actualite.php');
     require ('app/models/entity/Author.php');
 

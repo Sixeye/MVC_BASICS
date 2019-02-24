@@ -6,21 +6,12 @@
      * Time: 15:17
      */
 
-     include_once ('app/models/Database.php');
-     use entity\Article;
+    use entity\Article;
 
-     class ArticleRepository
-     {
-        private $conn;
+    require ('AbstractRepository.php');
 
-        /**
-         * ArticlesRepository constructor.
-         */
-         public function __construct()
-         {
-            $this->conn = Database::getConnection();
-         }
-
+    class ArticleRepository extends AbstractRepository
+    {
         /**
          * Sends two last articles.
          * return an array of the two last articles
