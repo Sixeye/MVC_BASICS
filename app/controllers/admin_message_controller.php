@@ -7,6 +7,8 @@
     require ('app/models/repository/MessageRepository.php');
     require ('app/models/repository/AuthorRepository.php');
 
+    AuthorRepository::login();
+
     $showMessages = new MessageRepository();
     $allMessages  = $showMessages->getAllMessages();
 
@@ -17,19 +19,6 @@
         $deleteMessage = new MessageRepository();
         $mesageDelete = $deleteMessage->deleteMessage($post_id);
     }
-
-
-
-    /////////////////////////////////////////////////////////
-///     $showArticle = new ArticleRepository();
-//    $allArticles = $showArticle->getAllArticles();
-///
-/// /////////////////////////////////////////////////////////
-
-//    $getAllMessages = Messages::getAllMessages();
-//    $deleteMessage  = Messages::deleteMessage();
-
-    AuthorRepository::login();
 
     ob_start();
     include_once 'app/views/admin_message_view.php';

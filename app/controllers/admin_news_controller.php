@@ -1,4 +1,5 @@
 <?php
+
     use entity\Actualite;
     require ('app/models/repository/ActualiteRepository.php');
     require ('app/models/repository/AuthorRepository.php');
@@ -40,9 +41,6 @@
         $deleteActualite = new ActualiteRepository();
         $actualiteDelete = $deleteActualite->deleteActualite($post_id);
     }
-
-    //    $deleteActualites = Actualites::deleteActualites();
-
 
     ob_start();
     include_once 'app/views/admin_news_view.php';
