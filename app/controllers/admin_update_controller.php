@@ -27,7 +27,7 @@
         $updated_content = $_POST['u_content'];
         $updated_author_id = SecurityService::str_secur($_POST['u_author_id']);
         $updated_category_id = SecurityService::str_secur($_POST['u_category_id']);
-        $date = new \DateTime();
+        $date = new DateTime();
         $date = $date->format('Y-m-d H:i:s');
 
         $updatedArticle = new Article();

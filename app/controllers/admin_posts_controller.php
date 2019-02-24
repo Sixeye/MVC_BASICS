@@ -19,7 +19,7 @@
         $post_content = ($_POST['content']);
         $post_author_id = SecurityService::str_secur($_POST['author_id']);
         $post_category_id = SecurityService::str_secur($_POST['category_id']);
-        $date = new \DateTime();
+        $date = new DateTime();
         $date = $date->format('Y-m-d H:i:s');
 
         $articleCreated = new Article();

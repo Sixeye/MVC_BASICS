@@ -27,7 +27,7 @@
         $nupdated_content = $_POST['nu_content'];
         $nupdated_author_id = (int)(SecurityService::str_secur($_POST['nu_author_id']));
         $nupdated_category_id = (int)(SecurityService::str_secur($_POST['nu_category_id']));
-        $date = new \DateTime();
+        $date = new DateTime();
         $date = $date->format('Y-m-d H:i:s');
 
         $nupdatedArticle = new Actualite();
