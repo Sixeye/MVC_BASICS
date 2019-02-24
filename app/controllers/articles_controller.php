@@ -43,7 +43,7 @@
     foreach ($articles as $article)
     {
         $commentShow  = new CommentRepository();
-        $showComment[$article['id']] = $commentShow->showComments($article['id']);
+        $showComment[$article['id']] = $commentShow->showComment($article['id']);
     }
 
     ob_start();

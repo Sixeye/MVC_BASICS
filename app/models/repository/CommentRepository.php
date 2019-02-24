@@ -30,7 +30,7 @@
          * Shows  comments in the article page.
          * @return datas from the DB
          */
-        public function showComments($actual_id)
+        public function showComment($actual_id)
         {
             if (!empty($actual_id))
             {
