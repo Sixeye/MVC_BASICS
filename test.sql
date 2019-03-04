@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  mar. 19 fév. 2019 à 18:28
+-- Généré le :  lun. 25 fév. 2019 à 09:08
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -100,8 +100,8 @@ CREATE TABLE `authors` (
 --
 
 INSERT INTO `authors` (`id`, `firstname`, `lastname`, `password`, `email`, `secret`) VALUES
-(1, 'Jean', 'Forteroche', 'jf74094d43910033275e6d69a9ff05abe731ce623131', 'srinath@srinath.fr', '247720bff8b2155d891925009b0bb29fe022024a'),
-(2, 'Anna', 'Desnos - Agent Littéraire', 'ActualiteAnnaDesnos', 'veejayseye@gmail.com', 'b42b33ace6f4a32d9db8d0d82b1f91b8e9e02951');
+(1, 'Jean', 'Forteroche', 'jf74094d43910033275e6d69a9ff05abe731ce623131', 'srinath@srinath.fr', '1ca372222886d913f0b94e624d6567a186ed4199'),
+(2, 'Anna', 'Desnos - Agent Littéraire', 'jffca0b7451ef0ce2fdb2741685e30cfe38187227c31', 'veejayseye@gmail.com', 'b42b33ace6f4a32d9db8d0d82b1f91b8e9e02951');
 
 -- --------------------------------------------------------
 
@@ -142,12 +142,15 @@ CREATE TABLE `commentaires` (
 --
 
 INSERT INTO `commentaires` (`id`, `content`, `date`, `nom`, `article_id`, `approved`) VALUES
+(1, 'Fantastique!', '2019-01-08 14:42:49', 'Joker', 0, 1),
+(3, 'Ca marche je crois.', '2019-01-08 14:44:50', 'Jobs Steve', 0, 1),
+(4, 'Bon que pouvez-vous faire d\'autre?', '2019-01-08 14:45:12', 'Jack Bauer', 103, 1),
+(55, 'Un commentaire ici pour tester l\'id.', '2019-01-10 14:37:32', 'Chris', 75, 1),
 (56, 'Joli pas pour la femme.', '2019-01-13 14:32:32', 'Simone de Beauvoir', 2, 1),
 (57, 'C\'est beau l\'enfance!', '2019-01-13 14:35:50', 'Tom Sawyer', 1, 0),
 (62, 'Le boson de Higgs, la particule de Dieu!\r\nBelle introduction.\r\nMerci pour votre travail remarquable.', '2019-01-13 23:44:58', 'Hugh Everett', 5, 1),
 (63, 'J\'aime le silence dans vos histoires.', '2019-01-14 00:02:45', 'Emmanuelle Devos', 4, 1),
-(64, 'J\'aime Trump et je ne vois pas pourquoi on le mélange à toutes les sauces.\r\nC\'est une personne élue, il faut la respecter.', '2019-01-14 00:12:04', 'MLP', 3, 1),
-(78, 'TADATADA', '2019-02-19 10:38:39', 'FISH and F1SH', 5, 0);
+(64, 'J\'aime Trump et je ne vois pas pourquoi on le mélange à toutes les sauces.\r\nC\'est une personne élue, il faut la respecter.', '2019-01-14 00:12:04', 'MLP', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -247,7 +250,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT pour la table `messages`
