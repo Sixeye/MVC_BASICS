@@ -2,18 +2,10 @@
 
     use entity\Comment;
 
-    class CommentRepository
+    require_once ('AbstractRepository.php');
+
+    class CommentRepository extends AbstractRepository
     {
-        private $conn;
-
-        /**
-         * Db connection
-         */
-        public function __construct()
-        {
-            $this->conn = Database::getConnection();
-        }
-
         public function createComment(Comment $Comment)
         {
                 $reqComments = $this->conn->prepare('INSERT INTO commentaires(content, nom, article_id, date, approved) VALUES(:post_content, :post_nom, :post_articleId, :date, :approved)');
@@ -27,8 +19,8 @@
         }
 
         /**
-         * Shows  comments in the article page.
-         * @return datas from the DB
+         * Shows a specific comment in the update page.
+         * return datas from the DB
          */
         public function showComment($actual_id)
         {
@@ -41,8 +33,8 @@
         }
 
         /**
-         * Sends all reported comments.
-         * @return array
+         * Sends a reported comment based.
+         * changes a boolean value in the DB
          */
         public function reportedComments($signal)
         {
@@ -54,8 +46,8 @@
 
 
         /**
-         * Shows all reported comments.
-         * @return array
+         * Shows all reported comments, boolean value 0 or null.
+         * returns an array
          */
         public function getReportedComment()
         {
@@ -67,7 +59,7 @@
 
         /**
          * Deletes a reported comment in the admin section.
-         * @return datas to the DB
+         * erases datas from the DB
          */
         public function deleteComment($id)
         {
@@ -78,8 +70,8 @@
         }
 
         /**
-         * Validate a reported comment, status from false to true (0 to 1).
-         * @return array
+         * Validates a reported comment, status from false to true (0 to 1).
+         * changes a boolean value in the DB
          */
         public function validateComment($id)
         {

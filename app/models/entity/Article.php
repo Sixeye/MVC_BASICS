@@ -2,14 +2,15 @@
 
     namespace entity;
 
-    require ('app/models/entity/AbstractEntity.php');
-
     /**
      * Created by PhpStorm.
      * User: srinathchristophersamarasinghe
      * Date: 2019-02-16
      * Time: 15:25
      */
+
+    require_once ('app/models/entity/AbstractEntity.php');
+
     class Article extends AbstractEntity
     {
         protected  $id;

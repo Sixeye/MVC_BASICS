@@ -1,4 +1,7 @@
 <?php
+
+     namespace entity;
+
     /**
      * Created by PhpStorm.
      * User: srinathchristophersamarasinghe
@@ -6,37 +9,15 @@
      * Time: 11:02
      */
 
-     namespace entity;
+     require_once ('app/models/entity/AbstractEntity.php');
 
-     class Comment
+     class Comment extends AbstractEntity
      {
          private $content;
          private $date;
          private $nom;
          private $article_id;
          private $approved;
-
-         public function __construct($data = [])
-         {
-             if (!empty($data)) // If data were declared, hydrate the object.
-                 {
-                     $this->hydrate($data);
-                 }
-         }
-
-          // Hydrate
-         public function hydrate(array $data)
-         {
-              foreach ($data as $key => $value)
-              {
-                  $method = 'set'.ucfirst($key);
-
-                  if (method_exists($this, $method))
-                  {
-                      $this->$method($value);
-                  }
-              }
-         }
 
          /**
           * @return mixed

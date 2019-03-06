@@ -9,11 +9,15 @@
 
     use entity\Message;
 
-    require ('AbstractRepository.php');
+     require_once ('AbstractRepository.php');
 
 
     class MessageRepository extends AbstractRepository
     {
+        /**
+         * Takes the sanitized values from the inputs with getters and setters and create a message
+         * @param Message $messageCreated
+         */
         public function createMessage(Message $messageCreated)
         {
             $reqMessage = $this->conn->prepare('INSERT INTO messages(nom, email, telephone, content, date) VALUES( :post_nom, :post_email, :post_telephone, :post_content, :post_date)');

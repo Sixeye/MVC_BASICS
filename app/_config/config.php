@@ -22,13 +22,13 @@ session_start();
 // --------------------------- //
 
 // Paths
-define("PATH_REQUIRE", substr($_SERVER['SCRIPT_FILENAME'], 0, -9)); // Pour fonctions d'inclusion php
-define("PATH", substr($_SERVER['PHP_SELF'], 0, -9)); // Pour images, fichiers etc (html)
+define("PATH_REQUIRE", substr($_SERVER['SCRIPT_FILENAME'], 0, -9)); // For functions, -9 for taking out index.php
+define("PATH", substr($_SERVER['PHP_SELF'], 0, -9)); // For every files, -9 for taking out index.php
 
 // Website informations
 define("WEBSITE_TITLE", "BLOG ROMAN BILLET POUR L ALASKA");
 define("WEBSITE_NAME", "ROMAN ALASKA FORTEROCHE");
-define("WEBSITE_URL", "https://monsite.com");
+define("WEBSITE_URL", "https://wwww.srinath-pro.com/MVC_BASICS");
 define("WEBSITE_DESCRIPTION", "Description du site");
 define("WEBSITE_KEYWORDS", "");
 define("WEBSITE_LANGUAGE", "FRANCAIS");

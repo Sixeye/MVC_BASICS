@@ -8,7 +8,7 @@
 
     use entity\Article;
 
-    require ('AbstractRepository.php');
+    require_once ('AbstractRepository.php');
 
     class ArticleRepository extends AbstractRepository
     {

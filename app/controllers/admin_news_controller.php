@@ -1,10 +1,11 @@
 <?php
 
     use entity\Actualite;
-    require ('app/models/repository/ActualiteRepository.php');
-    require ('app/models/repository/AuthorRepository.php');
-    require ('app/models/entity/Actualite.php');
-    require ('app/models/entity/Author.php');
+
+    require_once ('app/models/repository/ActualiteRepository.php');
+    require_once ('app/models/repository/AuthorRepository.php');
+    require_once ('app/models/entity/Actualite.php');
+    require_once ('app/models/entity/Author.php');
 
     AuthorRepository::login();
 

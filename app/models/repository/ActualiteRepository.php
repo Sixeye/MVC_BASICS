@@ -8,14 +8,14 @@
 
     use entity\Actualite;
 
-    require ('AbstractRepository.php');
+    require_once ('AbstractRepository.php');
 
 
     class ActualiteRepository extends AbstractRepository
     {
         /**
          * Sends all Actualites.
-         * @return array
+         * returns an array
          */
          public function getAllActualites()
          {
@@ -31,8 +31,8 @@
          }
 
          /**
-          * Creates a news thanks to the admin news section.
-          * @return datas to the DB
+          * Creates a news thanks to the admin news section added inputs.
+          * return datas to the DB
           */
          public function createActualite(Actualite $actualiteCreated)
          {
@@ -50,8 +50,8 @@
          }
 
          /**
-          * Deletes a news thanks to the admin news section.
-          * @return datas to the DB
+          * Deletes a news thanks to the admin news section delete button.
+          * retrieves datas from the DB
           */
          public function deleteActualite($post_id)
          {
@@ -64,9 +64,9 @@
 
          /**
           * Fill an news in update page thanks to the ID in admin news section.
-          * @return datas to the DB
+          * return datas from the DB
           */
-         public function fillActualite(Actualite $idUp)
+         public function getActualite(Actualite $idUp)
          {
                  $reqActualite = $this->conn->prepare("SELECT * FROM actualites WHERE id = :idUp");
                  $reqActualite->bindParam(':idUp', $idUp->getId(), PDO::PARAM_INT);
@@ -74,12 +74,11 @@
 
                  $actualiteFill = $reqActualite->fetch();
                  return $actualiteFill;
-
          }
 
          /**
-          * Updates an news thanks to an ID. Go back to the posts page.
-          * @return datas to the DB
+          * Updates an news thanks to an ID. Getting back to the admin posts page when done.
+          * return datas to the DB
           */
          public function updateActualite(Actualite $nupdateActualite)
          {

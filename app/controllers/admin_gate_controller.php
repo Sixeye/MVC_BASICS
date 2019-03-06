@@ -1,8 +1,9 @@
 <?php
+
     use entity\Author;
 
-    require ('app/models/entity/Author.php');
-    require ('app/models/repository/AuthorRepository.php');
+    require_once ('app/models/entity/Author.php');
+    require_once ('app/models/repository/AuthorRepository.php');
 
     AuthorRepository::loginGate();
 
@@ -10,7 +11,6 @@
     {
         $mail = SecurityService::str_secur($_POST['inputEmail']);
         $pWord = SecurityService::str_secur($_POST['inputPassword']);
-        $pWord = "jf".sha1($pWord."975")."31";
         $Author = new Author();
         $Author->setPWord($pWord);
         $Author->setMail($mail);

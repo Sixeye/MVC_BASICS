@@ -1,4 +1,7 @@
 <?php
+
+     namespace entity;
+
     /**
      * Created by PhpStorm.
      * User: srinathchristophersamarasinghe
@@ -6,9 +9,7 @@
      * Time: 10:15
      */
 
-     namespace entity;
-
-     require ('app/models/entity/AbstractEntity.php');
+     require_once ('app/models/entity/AbstractEntity.php');
 
      class message extends AbstractEntity
      {

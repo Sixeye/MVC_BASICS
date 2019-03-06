@@ -2,21 +2,20 @@
 
     use entity\Comment;
 
-    require ('app/models/entity/Article.php');
-    require ('app/models/entity/Comment.php');
-    require ('app/models/repository/ArticleRepository.php');
-    require ('app/models/repository/CommentRepository.php');
+    require_once ('app/models/entity/Article.php');
+    require_once ('app/models/entity/Comment.php');
+    require_once ('app/models/repository/ArticleRepository.php');
+    require_once ('app/models/repository/CommentRepository.php');
 
     $articleChap  = new ArticleRepository();
     $articles = $articleChap->getAllArticles();
-
 
     if (isset($_POST['comment_post']) && !empty($_POST['comment_content']) && !empty($_POST['nom']))
     {
         $post_content = SecurityService::str_secur($_POST['comment_content']);
         $post_nom = SecurityService::str_secur($_POST['nom']);
         $post_articleId = $_POST['comment_post'];
-        $date = new \DateTime();
+        $date = new DateTime();
         $date = $date->format('Y-m-d H:i:s');
         $approved = 1;
 

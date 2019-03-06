@@ -8,7 +8,6 @@
      * Date: 2019-02-24
      * Time: 14:19
      */
-
     abstract class AbstractEntity
     {
         public function __construct($data = [])

@@ -1,5 +1,7 @@
 <?php
 
+     namespace entity;
+
      /**
       * Created by PhpStorm.
       * User: srinathchristophersamarasinghe
@@ -7,9 +9,9 @@
       * Time: 12:30
       */
 
-     namespace entity;
+     require_once ('app/models/entity/AbstractEntity.php');
 
-     class Author
+     class Author extends AbstractEntity
      {
          private  $firstname;
          private  $lastname;
@@ -17,28 +19,6 @@
          private  $pWord;
          private  $id;
          private  $secret;
-
-         public function __construct($data = [])
-         {
-             if (!empty($data)) // If data are declared, hydrate the object.
-             {
-                 $this->hydrate($data);
-             }
-         }
-
-         // Hydrate
-         public function hydrate(array $data)
-         {
-             foreach ($data as $key => $value)
-             {
-                 $method = 'set'.ucfirst($key);
-
-                 if (method_exists($this, $method))
-                 {
-                     $this->$method($value);
-                 }
-             }
-         }
 
          /**
           * @return mixed

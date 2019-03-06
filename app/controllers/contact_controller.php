@@ -2,9 +2,8 @@
 
     use entity\Message;
 
-    require ('app/models/entity/Message.php');
-    require ('app/models/repository/MessageRepository.php');
-
+    require_once ('app/models/entity/Message.php');
+    require_once ('app/models/repository/MessageRepository.php');
 
     if (isset($_POST['btnContact']) && ($_POST['nom']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['message']))
     {

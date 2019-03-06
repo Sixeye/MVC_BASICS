@@ -1,11 +1,9 @@
 <?php
 
-    use entity\Message;
-
-    require ('app/models/entity/Message.php');
-    require ('app/models/entity/Author.php');
-    require ('app/models/repository/MessageRepository.php');
-    require ('app/models/repository/AuthorRepository.php');
+    require_once ('app/models/entity/Message.php');
+    require_once ('app/models/entity/Author.php');
+    require_once ('app/models/repository/MessageRepository.php');
+    require_once ('app/models/repository/AuthorRepository.php');
 
     AuthorRepository::login();
 
@@ -17,7 +15,7 @@
         $post_id = ($_POST['delete']);
 
         $deleteMessage = new MessageRepository();
-        $mesageDelete = $deleteMessage->deleteMessage($post_id);
+        $messageDelete = $deleteMessage->deleteMessage($post_id);
     }
 
     ob_start();
