@@ -12,7 +12,7 @@
 
     if (isset($_POST['comment_post']) && !empty($_POST['comment_content']) && !empty($_POST['nom']))
     {
-        $post_content = SecurityService::str_secur($_POST['comment_content']);
+        $post_content = nl2br(SecurityService::str_secur($_POST['comment_content']));
         $post_nom = SecurityService::str_secur($_POST['nom']);
         $post_articleId = $_POST['comment_post'];
         $date = new DateTime();
