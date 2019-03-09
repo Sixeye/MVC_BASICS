@@ -43,8 +43,8 @@
                 INNER JOIN categories c ON c.id = a.category_id
                 ORDER BY id DESC
             ');
-            $reqArticles->execute([]);
-            return $reqArticles->fetchAll();
+             $reqArticles->execute([]);
+             return $reqArticles->fetchAll();
          }
 
 
