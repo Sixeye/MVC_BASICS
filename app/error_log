@@ -1,0 +1,147 @@
+[10-Mar-2019 12:57:53 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Space')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 12:58:38 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Space')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 13:01:58 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Odyssey')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 13:07:14 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Odyssey')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 13:09:35 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\message::setNom() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Message.php:37
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/contact_controller.php(18): entity\message->setNom('Daniel Auteuil')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Message.php on line 37
+[10-Mar-2019 13:10:55 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Comment::setContent() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Comment.php:36
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/articles_controller.php(23): entity\Comment->setContent('Quel d\xC3\xA9part?')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Comment.php on line 36
+[10-Mar-2019 13:13:10 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Comment::setContent() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Comment.php:36
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/articles_controller.php(23): entity\Comment->setContent('Quel d\xC3\xA9part?')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Comment.php on line 36
+[10-Mar-2019 13:13:45 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Space')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 13:13:55 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Space')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 13:32:16 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Space')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 13:34:47 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Space')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 13:54:03 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Space')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 13:55:37 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Space')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 13:57:01 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Space')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 14:05:56 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Space')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 14:08:27 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Space')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 14:08:42 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Space')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 14:10:07 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Space')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 14:10:15 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Space')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 14:14:04 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Space')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85
+[10-Mar-2019 14:18:44 UTC] PHP Fatal error:  Uncaught TypeError: Return value of entity\Author::setPWord() must be an instance of entity\void, none returned in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php:85
+Stack trace:
+#0 /home/srinathp/public_html/MVC_BLOGJF/app/controllers/admin_gate_controller.php(15): entity\Author->setPWord('2001Space')
+#1 /home/srinathp/public_html/MVC_BLOGJF/app/router.php(21): include_once('/home/srinathp/...')
+#2 /home/srinathp/public_html/MVC_BLOGJF/index.php(3): require_once('/home/srinathp/...')
+#3 {main}
+  thrown in /home/srinathp/public_html/MVC_BLOGJF/app/models/entity/Author.php on line 85

@@ -24,7 +24,7 @@
         $createMessage = new MessageRepository();
         $messageCreate = $createMessage->createMessage($messageCreated);
 
-        $messagesent = '- message envoyé par: ' . $post_nom . ' dont le mail est ' . $post_email . ' et le téléphone est ' . $post_phone . ' ' . 'Voici son message: ' . $post_content;
+        $messagesent = '- message envoyé par: ' . $post_nom . ' dont le mail est ' . $post_email . ' et le téléphone est ' . $post_telephone . ' ' . 'Voici son message: ' . $post_content;
 
             // send an e-mail
                     mail('veejayseye@gmail.com', 'Message reçu sur le blog de Jean Forteroche', $messagesent);
