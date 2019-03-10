@@ -31,7 +31,7 @@
          /**
           * @param mixed $nom
           */
-         public function setNom($nom): void
+         public function setNom($nom)
          {
              $this->nom = $nom;
          }
@@ -47,7 +47,7 @@
          /**
           * @param mixed $email
           */
-         public function setEmail($email): void
+         public function setEmail($email)
          {
              $this->email = $email;
          }
@@ -63,7 +63,7 @@
          /**
           * @param mixed $phone
           */
-         public function setPhone($phone): void
+         public function setPhone($phone)
          {
              $this->phone = $phone;
          }
@@ -79,7 +79,7 @@
          /**
           * @param mixed $message
           */
-         public function setMessage($message): void
+         public function setMessage($message)
          {
              $this->message = $message;
          }
@@ -95,7 +95,7 @@
          /**
           * @param mixed $date
           */
-         public function setDate($date): void
+         public function setDate($date)
          {
              $this->date = $date;
          }
@@ -111,7 +111,7 @@
          /**
           * @param mixed $id
           */
-         public function setId($id): void
+         public function setId($id)
          {
              $this->id = $id;
          }

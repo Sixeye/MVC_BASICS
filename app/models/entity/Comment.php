@@ -30,7 +30,7 @@
           /**
            * @param mixed $content
            */
-          public function setContent($content): void
+          public function setContent($content)
           {
               $this->content = $content;
           }
@@ -46,7 +46,7 @@
           /**
            * @param mixed $date
            */
-          public function setDate($date): void
+          public function setDate($date)
           {
               $this->date = $date;
           }
@@ -62,7 +62,7 @@
           /**
            * @param mixed $nom
            */
-          public function setNom($nom): void
+          public function setNom($nom)
           {
               $this->nom = $nom;
           }
@@ -78,7 +78,7 @@
           /**
            * @param mixed $article_id
            */
-          public function setArticleId($article_id): void
+          public function setArticleId($article_id)
           {
               $this->article_id = $article_id;
           }
@@ -94,7 +94,7 @@
           /**
            * @param mixed $approved
            */
-          public function setApproved($approved): void
+          public function setApproved($approved)
           {
               $this->approved = $approved;
           }

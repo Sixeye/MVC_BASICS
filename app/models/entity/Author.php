@@ -31,7 +31,7 @@
          /**
           * @param mixed $firstname
           */
-         public function setFirstname($firstname): void
+         public function setFirstname($firstname)
          {
              $this->firstname = $firstname;
          }
@@ -47,7 +47,7 @@
          /**
           * @param mixed $lastname
           */
-         public function setLastname($lastname): void
+         public function setLastname($lastname)
          {
              $this->lastname = $lastname;
          }
@@ -63,7 +63,7 @@
          /**
           * @param mixed $mail
           */
-         public function setMail($mail): void
+         public function setMail($mail)
          {
              $this->mail = $mail;
          }
@@ -79,7 +79,7 @@
          /**
           * @param mixed $pWord
           */
-         public function setPWord($pWord): void
+         public function setPWord($pWord)
          {
              $this->pWord = $pWord;
          }
@@ -95,7 +95,7 @@
          /**
           * @param mixed $id
           */
-         public function setId($id): void
+         public function setId($id)
          {
              $this->id = $id;
          }
@@ -111,7 +111,7 @@
          /**
           * @param mixed $secret
           */
-         public function setSecret($secret): void
+         public function setSecret($secret)
          {
              $this->secret = $secret;
          }

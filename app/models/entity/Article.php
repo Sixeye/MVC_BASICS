@@ -33,7 +33,7 @@
         /**
          * @param mixed $id
          */
-        public function setId($id): void
+        public function setId($id)
         {
             $this->id = $id;
         }
@@ -49,7 +49,7 @@
         /**
          * @param mixed $title
          */
-        public function setTitle($title): void
+        public function setTitle($title)
         {
             $this->title = $title;
         }
@@ -65,7 +65,7 @@
         /**
          * @param mixed $sentence
          */
-        public function setSentence($sentence): void
+        public function setSentence($sentence)
         {
             $this->sentence = $sentence;
         }
@@ -81,7 +81,7 @@
         /**
          * @param mixed $content
          */
-        public function setContent($content): void
+        public function setContent($content)
         {
             $this->content = $content;
         }
@@ -97,7 +97,7 @@
         /**
          * @param mixed $date
          */
-        public function setDate($date): void
+        public function setDate($date)
         {
             $this->date = $date;
         }
@@ -113,7 +113,7 @@
         /**
          * @param mixed $author
          */
-        public function setAuthor($author): void
+        public function setAuthor($author)
         {
             $this->author = $author;
         }
@@ -129,7 +129,7 @@
         /**
          * @param mixed $category
          */
-        public function setCategory($category): void
+        public function setCategory($category)
         {
             $this->category = $category;
         }
